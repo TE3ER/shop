@@ -12,7 +12,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Яблука."
       title="Яблучні чіпси"
-      Image="/public/Chips/AppleChips.jpg"
+      Image="/public/Chips/AppleChips.png"
       :price="120"
       :isAdded="true"
       :onClickAdd="onClickAdd"
