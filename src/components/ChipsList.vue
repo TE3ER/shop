@@ -11,7 +11,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Яблука."
       title="Яблучні чіпси"
-      imageUrl="/public/AppleChips.jpg"
+      imageUrl="/Chips/AppleChips.jpg"
       :price="120"
       :isAdded="true"
       :onClickAdd="onClickAdd"
@@ -20,7 +20,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Банани."
       title="Чіпси із бананів"
-      imageUrl="/public/Chips/BananaChips.jpg"
+      imageUrl="/Chips/BananaChips.jpg"
       :price="160"
       :isAdded="true"
       :onClickAdd="onClickAdd"
@@ -29,7 +29,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Ківі."
       title="Чіпси із ківі"
-      imageUrl="/public/Chips/KiwiChips.jpg"
+      imageUrl="/Chips/KiwiChips.jpg"
       :price="160"
       :isAdded="true"
       :onClickAdd="onClickAdd"
@@ -38,7 +38,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Апельсини."
       title="Чіпси із апельсинів"
-      imageUrl="/public/Chips/OrangeChips.jpg"
+      imageUrl="/Chips/OrangeChips.jpg"
       :price="160"
       :isAdded="true"
       :onClickAdd="onClickAdd"
@@ -47,7 +47,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Груши."
       title="Чіпси із груши"
-      imageUrl="/public/Chips/PearChips.jpg"
+      imageUrl="/Chips/PearChips.jpg"
       :price="150"
       :isAdded="true"
       :onClickAdd="onClickAdd"
@@ -56,7 +56,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Ананаси."
       title="Чіпси із ананасів"
-      imageUrl="/public/Chips/PineAppleChips.jpg"
+      imageUrl="/Chips/PineAppleChips.jpg"
       :price="210"
       :isAdded="true"
       :onClickAdd="onClickAdd"
@@ -65,7 +65,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Полуниці."
       title="Чіпси із полуниці"
-      imageUrl="/public/Chips/StrawberryChips.jpg"
+      imageUrl="/Chips/StrawberryChips.jpg"
       :price="240"
       :isAdded="true"
       :onClickAdd="onClickAdd"
