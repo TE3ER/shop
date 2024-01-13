@@ -9,6 +9,7 @@ import CardList from '../components/CardList.vue'
       <div class="relative">
         <img class="absolute left-4 top-3" src="/public/search.svg" alt="" />
         <input
+          id="name"
           class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gay-400"
           placeholder="Шукати"
         />
