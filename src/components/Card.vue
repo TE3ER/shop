@@ -2,7 +2,7 @@
 defineProps({
   title: String,
   compound: String,
-  Image: String,
+  imageUrl: String,
   price: Number,
   isAdded: Boolean,
   onClickAdd: Function
@@ -13,7 +13,7 @@ defineProps({
   <div
     class="relative bg-white border border-slate-100 rounded-3xl p-8 cursor-pointer transition hover:-translate-y-2 hover:shadow-xl"
   >
-    <img id="name" :src="Image" alt="food" />
+    <img :src="imageUrl" alt="food" />
     <h4>{{ title }}</h4>
     <p class="mt-2">{{ compound }}</p>
     <div class="flex justify-between mt-5">
@@ -23,7 +23,7 @@ defineProps({
       </div>
       <img
         @click="onClickAdd"
-        :src="isAdded ? '../../public/plus.svg' : '../../public/checked.svg'"
+        :src="isAdded ? '/public/plus.svg' : '/public/checked.svg'"
         alt="plus"
       />
     </div>
