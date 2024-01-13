@@ -12,7 +12,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Яблука."
       title="Яблучні чіпси"
-      imageUrl="Chips/AppleChips.jpg"
+      imageUrl="/Chips/AppleChips.jpg"
       :price="120"
       :isAdded="true"
       :onClickAdd="onClickAdd"
@@ -21,7 +21,7 @@ const onClickAdd = () => {
     <Card
       compound="Склад: Банани."
       title="Чіпси із бананів"
-      imageUrl="Chips/BananaChips.jpg"
+      imageUrl="/Chips/BananaChips.jpg"
       :price="160"
       :isAdded="true"
       :onClickAdd="onClickAdd"
