@@ -21,11 +21,7 @@ defineProps({
         <span>Ціна:</span>
         <span>{{ price }} грн</span>
       </div>
-      <img
-        @click="onClickAdd"
-        :src="!isAdded ? '/public/plus.svg' : '/public/checked.svg'"
-        alt="plus"
-      />
+      <img @click="onClickAdd" :src="!isAdded ? '/plus.svg' : '/checked.svg'" alt="plus" />
     </div>
   </div>
 </template>
