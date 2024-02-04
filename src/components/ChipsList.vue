@@ -1,6 +1,11 @@
 <script setup>
 import Card from './Card.vue'
 
+defineProps({
+  chips: Array
+})
+
+const emit = defineEmits(['addToCart'])
 const onClickAdd = () => {
   alert('Добавити!')
 }
@@ -9,6 +14,17 @@ const onClickAdd = () => {
 <template>
   <div class="grid grid-cols-3 gap-5">
     <Card
+      v-for="item in chips"
+      :key="item.id"
+      :compound="item.compound"
+      :title="item.title"
+      :imageUrl="item.imageUrl"
+      :price="item.price"
+      :isAdded="true"
+      :onClickAdd="() => emit('addToCart', item)"
+    />
+
+    <!--<Card
       compound="Склад: Яблука."
       title="Яблучні чіпси"
       imageUrl="/Chips/AppleChips.jpg"
@@ -69,6 +85,6 @@ const onClickAdd = () => {
       :price="240"
       :isAdded="true"
       :onClickAdd="onClickAdd"
-    />
+    />-->
   </div>
 </template>

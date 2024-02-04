@@ -2,6 +2,12 @@
 import Card from './Card.vue'
 import BoxCard from './BoxCard.vue'
 
+defineProps({
+  items: Array
+})
+
+const emit = defineEmits(['addToCart'])
+
 const onClickAdd = () => {
   alert('Добавити!')
 }
@@ -10,6 +16,17 @@ const onClickAdd = () => {
 <template>
   <div class="grid grid-cols-3 gap-5">
     <Card
+      v-for="item in items"
+      :key="item.id"
+      :compound="item.compound"
+      :title="item.title"
+      :imageUrl="item.imageUrl"
+      :price="item.price"
+      :isAdded="true"
+      :onClickAdd="() => emit('addToCart', item)"
+    />
+
+    <!--<Card 
       compound="Склад: Яблука."
       title="Яблучні чіпси"
       imageUrl="/Chips/AppleChips.jpg"
@@ -18,7 +35,7 @@ const onClickAdd = () => {
       :onClickAdd="onClickAdd"
     />
 
-    <Card
+    <Card 
       compound="Склад: Банани."
       title="Чіпси із бананів"
       imageUrl="/Chips/BananaChips.jpg"
@@ -27,7 +44,7 @@ const onClickAdd = () => {
       :onClickAdd="onClickAdd"
     />
 
-    <Card
+    <Card 
       compound="Склад: Ківі."
       title="Чіпси із ківі"
       imageUrl="/Chips/KiwiChips.jpg"
@@ -36,7 +53,7 @@ const onClickAdd = () => {
       :onClickAdd="onClickAdd"
     />
 
-    <Card
+    <Card 
       compound="Склад: Апельсини."
       title="Чіпси із апельсинів"
       imageUrl="/Chips/OrangeChips.jpg"
@@ -179,6 +196,6 @@ const onClickAdd = () => {
       :price="1600"
       :isAdded="true"
       :onClickAdd="onClickAdd"
-    />
+    />-->
   </div>
 </template>

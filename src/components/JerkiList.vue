@@ -1,5 +1,10 @@
 <script setup>
 import Card from './Card.vue'
+defineProps({
+  jerkis: Array
+})
+
+const emit = defineEmits(['addToCart'])
 
 const onClickAdd = () => {
   alert('Добавити!')
@@ -9,6 +14,17 @@ const onClickAdd = () => {
 <template>
   <div class="grid grid-cols-3 gap-5">
     <Card
+      v-for="item in jerkis"
+      :key="item.id"
+      :compound="item.compound"
+      :title="item.title"
+      :imageUrl="item.imageUrl"
+      :price="item.price"
+      :isAdded="true"
+      :onClickAdd="() => emit('addToCart', item)"
+    />
+
+    <!--<Card
       compound="Склад: філе куряче,нітритна сіль, соєвий соус,спеції. Умови зберігання: 0 +5°С в герметичній
       упаковці."
       title="Курячі ковбаски"
@@ -34,6 +50,6 @@ const onClickAdd = () => {
       :price="240"
       :isAdded="true"
       :onClickAdd="onClickAdd"
-    />
+    />-->
   </div>
 </template>

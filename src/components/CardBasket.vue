@@ -1,21 +1,31 @@
+<script setup>
+const emit = defineEmits(['onClickRemove'])
+defineProps({
+  id: Number,
+  title: String,
+  imageUrl: String,
+  price: Number
+})
+</script>
+
 <template>
-    <div class="flex items-center border border-slate-200 p-4 rounded-xl gap-4">
-      <img class="w-16 h-16" src="/public/Jerki/Kovbasky-chiken.jpg" alt="sneakers-1" />
-  
-      <div class="flex flex-col">
-        <p>Курячі ковбаски Курячі</p>
-  
-        <div class="flex justify-between mt-2">
-          <b>160 грн</b>
-        </div>
-      </div>
-      <div class="flex justify-center w-10 h-10">
-        <img
-          class="opacity-40 hover:opacity-100 cursor-pointer transition"
-          src="/public/close.svg"
-          alt="close"
-        />
+  <div class="flex items-center border border-slate-200 p-4 rounded-xl gap-4">
+    <img class="w-16 h-16" :src="imageUrl" alt="sneakers-1" />
+
+    <div class="flex flex-col flex-1">
+      <p>{{ title }}</p>
+
+      <div class="flex justify-between mt-2">
+        <b class="flex-1">{{ price }} грн</b>
       </div>
     </div>
-  </template>
-  
+    <div class="flex justify-center w-10 h-10">
+      <img
+        @click="emit('onClickRemove')"
+        class="opacity-40 hover:opacity-100 cursor-pointer transition"
+        src="/public/close.svg"
+        alt="close"
+      />
+    </div>
+  </div>
+</template>

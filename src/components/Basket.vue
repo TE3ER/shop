@@ -1,6 +1,10 @@
 <script setup>
 import BasketHead from './BasketHead.vue'
 import CardItemList from './CardItemList.vue'
+
+defineProps({
+  totalPrice: Number
+})
 </script>
 
 <template>
@@ -14,7 +18,7 @@ import CardItemList from './CardItemList.vue'
       <div class="flex gap-2">
         <span>До оплати:</span>
         <div class="flex-1 border-b border-dashed"></div>
-        <b>160 ₴</b>
+        <b>{{ totalPrice }} ₴</b>
       </div>
       <button
         disabled=""

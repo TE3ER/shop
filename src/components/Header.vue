@@ -1,4 +1,8 @@
 <script setup>
+defineProps({
+  totalPrice: Number
+})
+
 const emit = defineEmits(['OpenBasket'])
 </script>
 
@@ -51,7 +55,7 @@ const emit = defineEmits(['OpenBasket'])
         class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
       >
         <img src="/public/cart.svg" alt="cart" />
-        <b>160</b>
+        <b>{{ totalPrice }}</b>
       </li>
     </ul>
   </header>
