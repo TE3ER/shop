@@ -6,14 +6,16 @@
       </div>
     </div>
     <div
-      class="text-left font-sans font-normal text-xs leading-5 tracking-normal outline-none box-border flex flex-wrap mr-0 ml-0"
+      class="text-left font-sans font-normal text-xs leading-5 tracking-normal outline-none box-border flex flex-wrap mr-0 ml-0 max-sm:max-w-full"
     >
-      <div class="basis-2/5 p-2.5 mb-5 text-left w-full max-w-2/4 text-xl">
+      <div
+        class="basis-2/5 p-2.5 mb-5 text-left w-full max-w-2/4 text-xl max-sm:text-left max-sm:basis-full"
+      >
         <h2 class="my-2.5 mx-0">Графік роботи</h2>
         <p class="leading-9"><i class="far fa-clock"></i>Понеділок - П'ятниця : 10.00-18.00</p>
         <p class="leading-9"><i class="far fa-clock"></i>Субота - Неділя : Вихідний</p>
       </div>
-      <div class="basis-2/5 p-2.5 mb-5 text-right w-full max-w-2/4 text-xl">
+      <div class="basis-2/5 p-2.5 mb-5 text-right w-full max-w-2/4 text-xl max-sm:text-left">
         <h2 class="my-2.5 mx-0">Контакти</h2>
         <p class="leading-9"><i class="fas fa-envelope-open"></i>info@example.com</p>
         <p class="leading-9"><i class="fas fa-phone-alt"></i>+380672199123</p>

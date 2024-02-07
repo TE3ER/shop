@@ -11,7 +11,7 @@ const emit = defineEmits(['OpenBasket'])
     class="flex justify-between border-b border-slate-200 px-10 py-8 max-sm:grid max-sm:grid-cols-1"
   >
     <router-link to="/"
-      ><div class="flex items-center gap-4 md:grid">
+      ><div class="flex items-center gap-4 md:grid max-sm:justify-center">
         <img
           src="/public/LOGO-removebg-preview.png"
           alt="LOGO"
@@ -25,7 +25,7 @@ const emit = defineEmits(['OpenBasket'])
     >
       <router-link to="/"
         ><li
-          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
+          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center"
         >
           <span>Головна</span>
         </li>
@@ -33,14 +33,14 @@ const emit = defineEmits(['OpenBasket'])
 
       <router-link to="/menu"
         ><li
-          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
+          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center"
         >
           <span>Меню</span>
         </li>
       </router-link>
       <router-link to="/contacts"
         ><li
-          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
+          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center"
         >
           <span>Контакти</span>
         </li>
@@ -48,7 +48,7 @@ const emit = defineEmits(['OpenBasket'])
 
       <router-link to="/pay">
         <li
-          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
+          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center"
         >
           <span>Оплата</span>
         </li></router-link
@@ -56,7 +56,7 @@ const emit = defineEmits(['OpenBasket'])
 
       <li
         @click="() => emit('OpenBasket')"
-        class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
+        class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center"
       >
         <img src="/public/cart.svg" alt="cart" />
         <b>{{ totalPrice }}</b>

@@ -40,7 +40,7 @@ const jerkis = [
 </script>
 
 <template>
-  <div class="flex justify-between items=center">
+  <div class="flex justify-between items=center max-sm:grid max-sm:grid-cols-1">
     <h2 class="text-3xl font-bold mb-8">Джерки</h2>
   </div>
   <CardList :jerkis="jerkis" @add-to-cart="onClickAddPlus" />

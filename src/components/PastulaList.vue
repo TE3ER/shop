@@ -13,7 +13,7 @@ const onClickAdd = () => {
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-5">
+  <div class="grid grid-cols-3 gap-5 max-sm:grid-cols-1 max-md:grid-cols-2">
     <Card
       v-for="item in pastulas"
       :key="item.id"

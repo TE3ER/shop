@@ -40,7 +40,7 @@ const boxs = [
 </script>
 
 <template>
-  <div class="flex justify-between items=center">
+  <div class="flex justify-between items=center max-sm:grid max-sm:grid-cols-1">
     <h2 class="text-3xl font-bold mb-8">Бокси</h2>
   </div>
   <BoxList :boxs="boxs" @add-to-cart="onClickAddPlus" />
