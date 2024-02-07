@@ -7,9 +7,11 @@ const emit = defineEmits(['OpenBasket'])
 </script>
 
 <template>
-  <header class="flex justify-between border-b border-slate-200 px-10 py-8">
+  <header
+    class="flex justify-between border-b border-slate-200 px-10 py-8 max-sm:grid max-sm:grid-cols-1"
+  >
     <router-link to="/"
-      ><div class="flex items-center gap-4">
+      ><div class="flex items-center gap-4 md:grid">
         <img
           src="/public/LOGO-removebg-preview.png"
           alt="LOGO"
@@ -18,7 +20,9 @@ const emit = defineEmits(['OpenBasket'])
         /></div
     ></router-link>
 
-    <ul class="flex items-center gap-20">
+    <ul
+      class="flex items-center gap-20 max-sm:grid max-md:grid max-lg:grid max-xl:grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3"
+    >
       <router-link to="/"
         ><li
           class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
