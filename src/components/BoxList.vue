@@ -1,5 +1,5 @@
 <script setup>
-import Card from './BoxCard.vue'
+import Card from './Card.vue'
 
 defineProps({
   boxs: Array
@@ -21,7 +21,8 @@ const onClickAdd = () => {
       :title="item.title"
       :imageUrl="item.imageUrl"
       :price="item.price"
-      :isAdded="false"
+      :type="(item.type = 'box')"
+      :isAdded="true"
       :onClickAdd="() => emit('addToCart', item)"
     />
 

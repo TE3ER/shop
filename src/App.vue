@@ -1,9 +1,23 @@
 <script setup>
-import { computed, provide, ref } from 'vue'
+import axios from 'axios'
+
+import { onMounted, computed, provide, ref } from 'vue'
 
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Basket from './components/Basket.vue'
+import CardItemList from './components/CardItemList.vue'
+
+const items = ref([])
+onMounted(async () => {
+  try {
+    const { data } = await axios.get('https://ef51ddaa01fc27ce.mokky.dev/items')
+
+    items.value = data
+  } catch (err) {
+    console.log(err)
+  }
+})
 
 const cart = ref([])
 

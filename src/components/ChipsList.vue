@@ -20,6 +20,7 @@ const onClickAdd = () => {
       :title="item.title"
       :imageUrl="item.imageUrl"
       :price="item.price"
+      :type="(item.type = 'frips')"
       :isAdded="true"
       :onClickAdd="() => emit('addToCart', item)"
     />

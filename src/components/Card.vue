@@ -5,6 +5,7 @@ defineProps({
   compound: String,
   imageUrl: String,
   price: Number,
+  type: String,
   isAdded: Boolean,
   onClickAdd: Function
 })

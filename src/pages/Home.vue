@@ -1,6 +1,18 @@
 <script setup>
+import axios from 'axios'
 import CardList from '../components/CardList.vue'
-import { inject, provide, ref } from 'vue'
+import { onMounted, inject, provide, ref } from 'vue'
+
+const items = ref([])
+onMounted(async () => {
+  try {
+    const { data } = await axios.get('https://ef51ddaa01fc27ce.mokky.dev/items')
+
+    items.value = data
+  } catch (err) {
+    console.log(err)
+  }
+})
 
 const { addToCart, removeToCart } = inject('cart')
 
@@ -12,7 +24,7 @@ const onClickAddPlus = (item) => {
   }
 }
 
-const items = [
+/*const items = [
   {
     id: 1,
     title: 'Яблучні чіпси',
@@ -149,7 +161,7 @@ const items = [
     imageUrl: '/Jerki.jpg',
     price: 1600
   }
-]
+]*/
 </script>
 
 <template>
