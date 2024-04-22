@@ -8,17 +8,6 @@ import Footer from './components/Footer.vue'
 import Basket from './components/Basket.vue'
 import CardItemList from './components/CardItemList.vue'
 
-const items = ref([])
-onMounted(async () => {
-  try {
-    const { data } = await axios.get('https://ef51ddaa01fc27ce.mokky.dev/items')
-
-    items.value = data
-  } catch (err) {
-    console.log(err)
-  }
-})
-
 const cart = ref([])
 
 const totalPrice = computed(() => cart.value.reduce((acc, item) => acc + item.price, 0))

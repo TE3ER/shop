@@ -59,7 +59,7 @@ const emit = defineEmits(['OpenBasket'])
         class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center"
       >
         <img src="/public/cart.svg" alt="cart" />
-        <b>{{ totalPrice }}</b>
+        <b>{{ totalPrice }} грн </b>
       </li>
     </ul>
   </header>
