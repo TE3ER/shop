@@ -8,7 +8,7 @@ const emit = defineEmits(['OpenBasket'])
 
 <template>
   <header
-    class="flex justify-between border-b border-slate-200 px-10 py-8 max-sm:grid max-sm:grid-cols-1"
+    class="sticky top-0 z-10 bg-white flex justify-between border-b border-slate-200 px-10 py-8 max-sm:grid max-sm:grid-cols-1"
   >
     <router-link to="/"
       ><div class="flex items-center gap-4 md:grid max-sm:justify-center">
