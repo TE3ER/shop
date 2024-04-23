@@ -6,7 +6,7 @@ import { onMounted, inject, provide, ref } from 'vue'
 const items = ref([])
 onMounted(async () => {
   try {
-    const { data } = await axios.get('https://ef51ddaa01fc27ce.mokky.dev/items')
+    const { data } = await axios.get('https://6627feb7b625bf088c0a8049.mockapi.io/items')
 
     items.value = data
   } catch (err) {
@@ -168,7 +168,7 @@ const onClickAddPlus = (item) => {
   <div class="flex justify-between items=center max-sm:grid max-sm:grid-cols-1">
     <h2 class="text-3xl font-bold mb-8">Всі товари</h2>
     <div>
-      <div class="relative">
+      <div class="relative max-sm:grid max-sm:pb-4">
         <img class="absolute left-4 top-3" src="/public/search.svg" alt="" />
         <input
           class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gay-400 sm:text-sm sm:leading-6"

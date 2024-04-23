@@ -1,4 +1,6 @@
 <script setup>
+import axios from 'axios'
+
 import ChipsList from '../components/ChipsList.vue'
 
 import { inject, provide, ref } from 'vue'
@@ -13,7 +15,7 @@ const onClickAddPlus = (item) => {
   }
 }
 
-const chips = [
+/*const chips = [
   {
     id: 1,
     title: 'Яблучні чіпси',
@@ -63,7 +65,7 @@ const chips = [
     imageUrl: '/Chips/StrawberryChips.jpg',
     price: 240
   }
-]
+]*/
 </script>
 
 <template>
