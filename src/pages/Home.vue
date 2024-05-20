@@ -165,9 +165,9 @@ const onClickAddPlus = (item) => {
 </script>
 
 <template>
-  <div class="flex justify-between items=center max-sm:grid max-sm:grid-cols-1">
+  <div class="flex justify-between items-center max-sm:grid max-sm:grid-cols-1">
     <h2 class="text-3xl font-bold mb-8">Всі товари</h2>
-    <div>
+    <div class="justify-center">
       <div class="relative max-sm:grid max-sm:pb-4 max-sm:px-4">
         <img class="absolute left-6 top-3" src="/public/search.svg" alt="" />
         <input

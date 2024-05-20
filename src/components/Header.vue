@@ -3,28 +3,30 @@ defineProps({
   totalPrice: Number
 })
 
-const emit = defineEmits(['OpenBasket'])
+const emit = defineEmits(['OpenBasket', 'OpenCategory'])
 </script>
 
 <template>
   <header
     class="sticky top-0 z-10 bg-white flex justify-between border-b border-slate-200 px-10 py-8 max-sm:flex max-sm:items-center"
   >
-    <svg
-      class="w-20 h-20 sm:hidden"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="{1.5}"
-      stroke="currentColor"
-      className="w-6 h-6"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-      />
-    </svg>
+    <div @click="() => emit('OpenCategory')">
+      <svg
+        class="w-20 h-20 sm:hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
+    </div>
     <router-link to="/"
       ><div class="flex items-center gap-4 md:grid max-sm:justify-center">
         <img

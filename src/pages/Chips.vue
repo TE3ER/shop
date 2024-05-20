@@ -1,9 +1,22 @@
 <script setup>
 import axios from 'axios'
-
+import Home from './Home.vue'
 import ChipsList from '../components/ChipsList.vue'
+import CardList from '../components/CardList.vue'
 
-import { inject, provide, ref } from 'vue'
+import { onMounted, inject, provide, ref, computed } from 'vue'
+
+const items = ref([])
+onMounted(async () => {
+  try {
+    const { data } = await axios.get('https://6627feb7b625bf088c0a8049.mockapi.io/items')
+
+    items.value = data
+  } catch (err) {
+    console.log(err)
+  }
+})
+/*const filteredItems = computed(() => items.value.filter((item) => item.type === 'frips'))*/
 
 const { addToCart, removeToCart } = inject('cart')
 
@@ -69,8 +82,9 @@ const onClickAddPlus = (item) => {
 </script>
 
 <template>
+  <!--<div v-for="item in filteredItems" :key="item.id"></div>-->
   <div class="flex justify-between items=center max-sm:grid max-sm:grid-cols-1">
     <h2 class="text-3xl font-bold mb-8">Фріпси</h2>
   </div>
-  <ChipsList :chips="chips" @add-to-cart="onClickAddPlus" />
+  <CardList :items="items" @add-to-cart="onClickAddPlus" />
 </template>

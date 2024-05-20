@@ -6,6 +6,8 @@ import { onMounted, computed, provide, ref } from 'vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Basket from './components/Basket.vue'
+import Category from './components/Category.vue'
+import Placing from './pages/Placing.vue'
 import CardItemList from './components/CardItemList.vue'
 
 const cart = ref([])
@@ -28,6 +30,8 @@ const removeToCart = (item) => {
 
 const basketOpen = ref(false)
 
+const categoryOpen = ref(false)
+
 const CloseBasket = () => {
   basketOpen.value = false
   document.body.style.overflow = 'auto'
@@ -35,6 +39,16 @@ const CloseBasket = () => {
 
 const OpenBasket = () => {
   basketOpen.value = true
+  document.body.style.overflow = 'hidden'
+}
+
+const CloseCategory = () => {
+  categoryOpen.value = false
+  document.body.style.overflow = 'auto'
+}
+
+const OpenCategory = () => {
+  categoryOpen.value = true
   document.body.style.overflow = 'hidden'
 }
 
@@ -50,16 +64,21 @@ provide('cart', {
   cart,
   CloseBasket,
   OpenBasket,
+  CloseCategory,
+  OpenCategory,
   addToCart,
   removeToCart
 })
+
+provide('totalPrice', totalPrice)
 </script>
 
 <template>
   <Basket v-if="basketOpen" :total-price="totalPrice" />
+  <Category v-if="categoryOpen" />
 
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
-    <Header :total-price="totalPrice" @Open-Basket="OpenBasket" />
+    <Header :total-price="totalPrice" @Open-Basket="OpenBasket" @Open-Category="OpenCategory" />
     <div class="p-10">
       <router-view></router-view>
     </div>
