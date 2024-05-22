@@ -1,28 +1,146 @@
 <script setup>
+import { ref, inject, watch } from 'vue'
 import CardItemList from '../components/CardItemList.vue'
+import axios from 'axios'
 
-import { inject } from 'vue'
-const totalPrice = inject('totalPrice')
+// Inject total price from parent component with a default value of 0
+const totalPrice = inject('totalPrice', ref(0))
+
+// Define refs for form fields
+const name = ref('')
+const email = ref('')
+const phone = ref('')
+const comment = ref('')
+
+// Define refs for form validation state
+const nameError = ref('')
+const emailError = ref('')
+const phoneError = ref('')
+const formValid = ref(false) // Initialize form validity
+
+// Regular expressions for validation
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const phoneRegex = /^\+?\d{10,15}$/
+
+// Function to validate form fields
+const validateForm = () => {
+  nameError.value = name.value ? '' : 'Це поле не має бути пустим'
+  emailError.value = email.value
+    ? emailRegex.test(email.value)
+      ? ''
+      : 'Неправильний формат email'
+    : 'Це поле не має бути пустим'
+  phoneError.value = phone.value
+    ? phoneRegex.test(phone.value)
+      ? ''
+      : 'Неправильний формат номера телефону'
+    : 'Це поле не має бути пустим'
+  formValid.value = !nameError.value && !emailError.value && !phoneError.value
+}
+
+// Function to adjust the height of the textarea
+const adjustTextareaHeight = (event) => {
+  const textarea = event.target
+  textarea.style.height = 'auto'
+  textarea.style.height = `${textarea.scrollHeight}px`
+}
+
+watch(comment, () => {
+  // Adjust textarea height initially if there's already text in it
+  const textarea = document.querySelector('textarea')
+  if (textarea) {
+    textarea.style.height = 'auto'
+    textarea.style.height = `${textarea.scrollHeight}px`
+  }
+})
+
+// Function to submit the order
+const submitOrder = async () => {
+  validateForm()
+  if (!formValid.value) {
+    return
+  }
+
+  const orderData = {
+    name: name.value,
+    email: email.value,
+    phone: phone.value,
+    comment: comment.value,
+    totalPrice: totalPrice.value,
+    delivery: 'delivery 1', // Example delivery method
+    pay: 'pay 1', // Example payment method
+    items: cart.value // Example cart data, should be replaced with actual cart data
+  }
+
+  try {
+    const response = await axios.post(
+      'https://664dd20aede9a2b5565505ef.mockapi.io/order',
+      orderData
+    )
+    console.log('Order submitted:', response.data)
+    clearCart()
+    clearForm()
+    // You can also handle success, e.g., show a success message, reset the form, etc.
+  } catch (error) {
+    console.error('Error submitting order:', error)
+    // Handle error, e.g., show an error message
+  }
+}
+
+const { cart } = inject('cart')
+const clearCart = () => {
+  cart.value = [] // Очищаємо кошик
+}
+
+const clearForm = () => {
+  name.value = ''
+  email.value = ''
+  phone.value = ''
+  comment.value = ''
+  nameError.value = ''
+  emailError.value = ''
+  phoneError.value = ''
+  formValid.value = false
+}
 </script>
 
 <template>
   <div class="flex items-center gap-20 flex-col">
-    <input
-      class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gay-400 sm:text-sm sm:leading-6"
-      placeholder="ПІБ"
-    />
-    <input
-      class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gay-400 sm:text-sm sm:leading-6"
-      placeholder="Email"
-    />
-    <input
-      class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gay-400 sm:text-sm sm:leading-6"
-      placeholder="Номер телефону "
-    />
-    <input
-      class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gay-400 sm:text-sm sm:leading-6"
-      placeholder="Коментарії "
-    />
+    <div class="w-full">
+      <input
+        v-model="name"
+        class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6 w-full"
+        placeholder="ПІБ"
+        @blur="validateForm"
+      />
+      <p v-if="nameError" class="text-red-500 text-sm">{{ nameError }}</p>
+    </div>
+    <div class="w-full">
+      <input
+        v-model="email"
+        class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6 w-full"
+        placeholder="Email"
+        @blur="validateForm"
+      />
+      <p v-if="emailError" class="text-red-500 text-sm">{{ emailError }}</p>
+    </div>
+    <div class="w-full">
+      <input
+        v-model="phone"
+        class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6 w-full"
+        placeholder="Номер телефону"
+        @blur="validateForm"
+      />
+      <p v-if="phoneError" class="text-red-500 text-sm">{{ phoneError }}</p>
+    </div>
+    <div class="w-full">
+      <textarea
+        v-model="comment"
+        class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6 w-full resize-none"
+        placeholder="Коментарі"
+        @input="adjustTextareaHeight"
+      ></textarea>
+    </div>
   </div>
 
   <CardItemList />
@@ -35,8 +153,9 @@ const totalPrice = inject('totalPrice')
     </div>
 
     <button
-      :disabled="totalPrice ? false : true"
-      class="mt-4 transition bg-lime-500 w-full rounded-xl py-3 text-white disabled:bg-slate-300 hover:bg-lime-600 active:700 cursor:pointer"
+      :disabled="!formValid || !totalPrice"
+      @click="submitOrder"
+      class="mt-4 transition bg-lime-500 w-full rounded-xl py-3 text-white disabled:bg-slate-300 hover:bg-lime-600 active:bg-lime-700 cursor:pointer"
     >
       Оформити замовлення
     </button>

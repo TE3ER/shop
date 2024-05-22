@@ -1,5 +1,6 @@
 <script setup>
 import BasketHead from './BasketHead.vue'
+import { ref } from 'vue'
 import CardItemList from './CardItemList.vue'
 
 defineProps({

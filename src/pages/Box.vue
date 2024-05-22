@@ -1,6 +1,18 @@
 <script setup>
-import BoxList from '../components/BoxList.vue'
-import { inject, provide, ref } from 'vue'
+import axios from 'axios'
+import CardList from '../components/CardList.vue'
+import { onMounted, ref, inject } from 'vue'
+
+const items = ref([])
+onMounted(async () => {
+  try {
+    const { data } = await axios.get('https://664dd20aede9a2b5565505ef.mockapi.io/items')
+    // Фільтруємо товари з "type": "1"
+    items.value = data.filter((item) => item.type === 'box')
+  } catch (err) {
+    console.log(err)
+  }
+})
 
 const { addToCart, removeToCart } = inject('cart')
 
@@ -11,37 +23,11 @@ const onClickAddPlus = (item) => {
     removeToCart(item)
   }
 }
-
-const boxs = [
-  {
-    id: 17,
-    title: 'Бокс із фріпсів',
-    compound:
-      'Склад: Яблучні фріпси, фріпси  із ківі, фріпси із полуниці, фріпси із бананів, фріпси із апельсинів.',
-    imageUrl: '/Fripsu.jpg',
-    price: 2000
-  },
-  {
-    id: 18,
-    title: 'Бокс із пастили',
-    compound:
-      'Склад: Пастила із яблук, пастила із малини, пастила із персиків, пастила із вишні, пастила із чорної смородини.',
-    imageUrl: '/Pastula.jpg',
-    price: 1600
-  },
-  {
-    id: 19,
-    title: "М'ясний бокс",
-    compound: 'Склад: Курячі джерки, свині джерки, свині джеркі з кунджутом, курячі ковбаски.',
-    imageUrl: '/Jerki.jpg',
-    price: 1600
-  }
-]
 </script>
 
 <template>
   <div class="flex justify-between items=center max-sm:grid max-sm:grid-cols-1">
     <h2 class="text-3xl font-bold mb-8">Бокси</h2>
   </div>
-  <BoxList :boxs="boxs" @add-to-cart="onClickAddPlus" />
+  <CardList :items="items" @add-to-cart="onClickAddPlus" />
 </template>

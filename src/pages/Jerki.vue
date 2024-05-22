@@ -1,7 +1,18 @@
 <script setup>
-import CardList from '../components/JerkiList.vue'
+import axios from 'axios'
+import CardList from '../components/CardList.vue'
+import { onMounted, ref, inject } from 'vue'
 
-import { inject, provide, ref } from 'vue'
+const items = ref([])
+onMounted(async () => {
+  try {
+    const { data } = await axios.get('https://664dd20aede9a2b5565505ef.mockapi.io/items')
+    // Фільтруємо товари з "type": "1"
+    items.value = data.filter((item) => item.type === 'jerki')
+  } catch (err) {
+    console.log(err)
+  }
+})
 
 const { addToCart, removeToCart } = inject('cart')
 
@@ -12,36 +23,11 @@ const onClickAddPlus = (item) => {
     removeToCart(item)
   }
 }
-
-const jerkis = [
-  {
-    id: 14,
-    title: 'Курячі ковбаски',
-    compound:
-      'Склад: філе куряче,нітритна сіль, соєвий соус,спеції. Умови зберігання: 0 +5°С в герметичній упаковці.',
-    imageUrl: '/Jerki/Kovbasky-chiken.jpg',
-    price: 120
-  },
-  {
-    id: 15,
-    title: 'Свинина з кунжутом',
-    compound: 'Склад: свинина(балик),нітритна сіль,соєвий соус, гірчиця,кунжут,спеції.',
-    imageUrl: '/Jerki/Jerki-sv-kyn.jpg',
-    price: 240
-  },
-  {
-    id: 16,
-    title: 'Свині джерки',
-    compound: 'Склад: свинина(балик),нітритна сіль,соєвий соус, гірчиця,спеції.',
-    imageUrl: '/Jerki/Jerki-sv.jpg',
-    price: 240
-  }
-]
 </script>
 
 <template>
   <div class="flex justify-between items=center max-sm:grid max-sm:grid-cols-1">
     <h2 class="text-3xl font-bold mb-8">Джерки</h2>
   </div>
-  <CardList :jerkis="jerkis" @add-to-cart="onClickAddPlus" />
+  <CardList :items="items" @add-to-cart="onClickAddPlus" />
 </template>

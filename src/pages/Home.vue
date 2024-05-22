@@ -6,7 +6,7 @@ import { onMounted, inject, provide, ref } from 'vue'
 const items = ref([])
 onMounted(async () => {
   try {
-    const { data } = await axios.get('https://6627feb7b625bf088c0a8049.mockapi.io/items')
+    const { data } = await axios.get('https://664dd20aede9a2b5565505ef.mockapi.io/items')
 
     items.value = data
   } catch (err) {
