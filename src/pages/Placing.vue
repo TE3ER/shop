@@ -11,11 +11,15 @@ const name = ref('')
 const email = ref('')
 const phone = ref('')
 const comment = ref('')
+const delivery = ref('')
+const pay = ref('')
 
 // Define refs for form validation state
 const nameError = ref('')
 const emailError = ref('')
 const phoneError = ref('')
+const deliveryError = ref('')
+const payError = ref('')
 const formValid = ref(false) // Initialize form validity
 
 // Regular expressions for validation
@@ -25,6 +29,8 @@ const phoneRegex = /^\+?\d{10,15}$/
 // Function to validate form fields
 const validateForm = () => {
   nameError.value = name.value ? '' : 'Це поле не має бути пустим'
+  deliveryError.value = delivery.value ? '' : 'Це поле не має бути пустим'
+  payError.value = pay.value ? '' : 'Це поле не має бути пустим'
   emailError.value = email.value
     ? emailRegex.test(email.value)
       ? ''
@@ -35,7 +41,12 @@ const validateForm = () => {
       ? ''
       : 'Неправильний формат номера телефону'
     : 'Це поле не має бути пустим'
-  formValid.value = !nameError.value && !emailError.value && !phoneError.value
+  formValid.value =
+    !nameError.value &&
+    !emailError.value &&
+    !phoneError.value &&
+    !deliveryError.value &&
+    !payError.value
 }
 
 // Function to adjust the height of the textarea
@@ -67,8 +78,8 @@ const submitOrder = async () => {
     phone: phone.value,
     comment: comment.value,
     totalPrice: totalPrice.value,
-    delivery: 'delivery 1', // Example delivery method
-    pay: 'pay 1', // Example payment method
+    delivery: delivery.value, // Example delivery method
+    pay: pay.value, // Example payment method
     items: cart.value // Example cart data, should be replaced with actual cart data
   }
 
@@ -97,9 +108,8 @@ const clearForm = () => {
   email.value = ''
   phone.value = ''
   comment.value = ''
-  nameError.value = ''
-  emailError.value = ''
-  phoneError.value = ''
+  delivery.value = ''
+  pay.value = ''
   formValid.value = false
 }
 </script>
@@ -115,6 +125,7 @@ const clearForm = () => {
       />
       <p v-if="nameError" class="text-red-500 text-sm">{{ nameError }}</p>
     </div>
+
     <div class="w-full">
       <input
         v-model="email"
@@ -140,6 +151,25 @@ const clearForm = () => {
         placeholder="Коментарі"
         @input="adjustTextareaHeight"
       ></textarea>
+    </div>
+    <div class="w-full">
+      <input
+        v-model="pay"
+        class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6 w-full"
+        placeholder="Оплата"
+        @blur="validateForm"
+      />
+      <p v-if="payError" class="text-red-500 text-sm">{{ payError }}</p>
+    </div>
+
+    <div class="w-full">
+      <input
+        v-model="delivery"
+        class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6 w-full"
+        placeholder="Доставка"
+        @blur="validateForm"
+      />
+      <p v-if="deliveryError" class="text-red-500 text-sm">{{ deliveryError }}</p>
     </div>
   </div>
 

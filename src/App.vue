@@ -79,7 +79,7 @@ provide('totalPrice', totalPrice)
 
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
     <Header :total-price="totalPrice" @Open-Basket="OpenBasket" @Open-Category="OpenCategory" />
-    <div class="p-10">
+    <div class="p-10 mb-14">
       <router-view></router-view>
     </div>
     <Footer />
