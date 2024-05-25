@@ -13,6 +13,7 @@
         </h1>
         <div
           class="m-0 p-0 box-border text-xs ont-sans text-amber-900 ease-in grid grid-cols-3 gap-5 max-sm:grid max-md:grid max-lg:grid max-xl:grid max-sm:grid-cols-1 max-md:grid-cols-1 max-lg:grid-cols-1 max-xl:grid-cols-2 max-sm:w-full"
+          v-auto-animate
         >
           <router-link to="/chips">
             <div

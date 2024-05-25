@@ -5,7 +5,7 @@ const { CloseBasket } = inject('cart')
 </script>
 
 <template>
-  <div class="flex items-center gap-5 mb-8">
+  <div class="flex items-center gap-5 mb-8" v-auto-animate>
     <svg
       @click="CloseBasket"
       class="opacity-30 cursor-pointer rotate-180 hover:opacity-100 transition hover:-translate-x-1"

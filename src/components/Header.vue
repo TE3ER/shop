@@ -6,9 +6,10 @@ defineProps({
 const emit = defineEmits(['OpenBasket', 'OpenCategory'])
 </script>
 
-<template>
+<template v-auto-animate>
   <header
     class="sticky top-0 z-10 bg-white flex justify-between border-b border-slate-200 px-10 py-8 max-sm:flex max-sm:items-center"
+    v-auto-animate
   >
     <div @click="() => emit('OpenCategory')">
       <svg
@@ -73,6 +74,7 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
       <li
         @click="() => emit('OpenBasket')"
         class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center"
+        v-auto-animate
       >
         <img src="/public/cart.svg" alt="cart" />
         <b>{{ totalPrice }} грн </b>
