@@ -14,7 +14,7 @@ export default {
       class="container mx-auto px-4 lg:px-12 flex flex-col lg:flex-row items-center justify-between"
     >
       <div
-        class="flex flex-col lg:flex-row gap-36 max-sm:gap-4 max-md:gap-4 md:gap-4 items-center lg:items-start"
+        class="flex flex-col lg:flex-row gap-36 max-sm:gap-4 max-md:gap-4 max-lg:gap-4 items-center lg:items-start"
       >
         <div class="text-center lg:text-left lg:mb-4 lg:items-center">
           <h2 class="text-2xl font-bold mb-2">Зворотний зв'язок для клієнтів</h2>
