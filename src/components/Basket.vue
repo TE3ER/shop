@@ -7,6 +7,17 @@ const { CloseBasket } = inject('cart')
 defineProps({
   totalPrice: Number
 })
+
+const scrollToTop = () => {
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+}
+
+const closeBasketAndScrollToTop = () => {
+  CloseBasket()
+  scrollToTop()
+}
 </script>
 
 <template>
@@ -27,7 +38,7 @@ defineProps({
       </div>
       <router-link to="/placing">
         <button
-          @click="CloseBasket"
+          @click="closeBasketAndScrollToTop"
           :disabled="totalPrice ? false : true"
           class="mt-4 transition bg-lime-500 w-full rounded-xl py-3 text-white disabled:bg-slate-300 hover:bg-lime-600 active:700 cursor:pointer"
         >

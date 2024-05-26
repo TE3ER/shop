@@ -45,7 +45,7 @@ const onClickAddPlus = (item) => {
   <div class="flex justify-between items-center max-sm:grid max-sm:grid-cols-1">
     <h2 class="text-3xl font-bold mb-8">Всі товари</h2>
     <div class="justify-center">
-      <div class="relative max-sm:grid max-sm:pb-4 max-sm:px-4">
+      <div class="relative max-sm:grid max-sm:pb-4 max-sm:px-4 max-w-full">
         <img class="absolute left-6 top-3" src="/public/search.svg" alt="" />
         <input
           v-model="filter.searchItems"

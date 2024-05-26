@@ -9,6 +9,7 @@ import Basket from './components/Basket.vue'
 import Category from './components/Category.vue'
 import Placing from './pages/Placing.vue'
 import CardItemList from './components/CardItemList.vue'
+import Banner from './components/Banner.vue'
 
 const cart = ref([])
 
@@ -74,6 +75,7 @@ provide('totalPrice', totalPrice)
 </script>
 
 <template>
+  <Banner />
   <Basket v-if="basketOpen" :total-price="totalPrice" />
   <Category v-if="categoryOpen" />
 
