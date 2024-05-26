@@ -2,6 +2,17 @@
 import { inject } from 'vue'
 
 const { CloseCategory } = inject('cart')
+
+const scrollToTop = () => {
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+}
+
+const closeCategoryAndScrollToTop = () => {
+  CloseCategory()
+  scrollToTop()
+}
 </script>
 
 <template>
@@ -34,6 +45,7 @@ const { CloseCategory } = inject('cart')
   <ul class="flex items-center gap-20 flex-col">
     <router-link to="/"
       ><li
+        @click="closeCategoryAndScrollToTop"
         class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
       >
         <span>Головна</span>
@@ -42,6 +54,7 @@ const { CloseCategory } = inject('cart')
 
     <router-link to="/menu"
       ><li
+        @click="closeCategoryAndScrollToTop"
         class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
       >
         <span>Меню</span>
@@ -49,6 +62,7 @@ const { CloseCategory } = inject('cart')
     </router-link>
     <router-link to="/contacts"
       ><li
+        @click="closeCategoryAndScrollToTop"
         class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
       >
         <span>Контакти</span>
@@ -57,6 +71,7 @@ const { CloseCategory } = inject('cart')
 
     <router-link to="/pay">
       <li
+        @click="closeCategoryAndScrollToTop"
         class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500"
       >
         <span>Оплата</span>
