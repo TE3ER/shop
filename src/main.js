@@ -3,6 +3,7 @@ import './assets/main.css'
 import { createApp } from 'vue'
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import Vue2TouchEvents from 'vue2-touch-events'
 
 import App from './App.vue'
 
@@ -36,6 +37,8 @@ const router = createRouter({
 })
 
 app.use(autoAnimatePlugin)
+
+app.use(Vue2TouchEvents)
 
 app.use(router)
 app.mount('#app')

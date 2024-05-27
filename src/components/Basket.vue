@@ -1,6 +1,6 @@
 <script setup>
 import BasketHead from './BasketHead.vue'
-import { ref, inject } from 'vue'
+import { inject } from 'vue'
 import CardItemList from './CardItemList.vue'
 
 const { CloseBasket } = inject('cart')
@@ -18,6 +18,26 @@ const closeBasketAndScrollToTop = () => {
   CloseBasket()
   scrollToTop()
 }
+
+// Змінні для відстеження жесту свайпу
+let startX = 0
+let currentX = 0
+
+const handleTouchStart = (event) => {
+  startX = event.touches[0].clientX
+}
+
+const handleTouchMove = (event) => {
+  currentX = event.touches[0].clientX
+}
+
+const handleTouchEnd = () => {
+  const diffX = currentX - startX
+  if (diffX > 100) {
+    // Закрити корзину, якщо свайп вправо більше ніж на 100px
+    CloseBasket()
+  }
+}
 </script>
 
 <template>
@@ -25,7 +45,12 @@ const closeBasketAndScrollToTop = () => {
     class="z-20 fixed top-0 left-0 h-full w-full bg-black z-10 opacity-70"
     @click="CloseBasket"
   ></div>
-  <div class="bg-white w-96 h-full fixed right-0 top-0 z-20 p-10 overflow-y-auto">
+  <div
+    class="bg-white w-96 h-full fixed right-0 top-0 z-20 p-10 overflow-y-auto"
+    @touchstart="handleTouchStart"
+    @touchmove="handleTouchMove"
+    @touchend="handleTouchEnd"
+  >
     <BasketHead />
 
     <CardItemList />
