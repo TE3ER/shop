@@ -23,7 +23,12 @@ defineProps({
         <span>Ціна за 100 грамів:</span>
         <span>{{ price }} грн</span>
       </div>
-      <img @click="onClickAdd" :src="isAdded ? '/plus.svg' : '/checked.svg'" alt="plus" />
+      <img
+        @click="onClickAdd"
+        :src="isAdded ? '/plus.svg' : '/checked.svg'"
+        alt="plus"
+        class="hover:rotate-180 transition duration-300"
+      />
     </div>
   </div>
 </template>
