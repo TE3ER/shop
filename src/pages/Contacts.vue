@@ -17,8 +17,14 @@
       </div>
       <div class="basis-2/5 p-2.5 mb-5 text-right w-full max-w-2/4 text-xl max-sm:text-left">
         <h2 class="my-2.5 mx-0">Контакти</h2>
-        <p class="leading-9"><i class="fas fa-envelope-open"></i>info@example.com</p>
-        <p class="leading-9"><i class="fas fa-phone-alt"></i>+380672199123</p>
+        <div class="flex flex-col mb-8">
+          <a href="mailto:info@example.com" class="inline-block"
+            ><i class="fas fa-envelope-open"></i> info@example.com</a
+          >
+          <a href="tel:+380672199123" class="inline-block"
+            ><i class="fas fa-phone-alt"></i> +380672199123</a
+          >
+        </div>
       </div>
     </div>
   </div>
