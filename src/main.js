@@ -16,6 +16,7 @@ import Pastula from './pages/Pastula.vue'
 import Jerki from './pages/Jerki.vue'
 import Box from './pages/Box.vue'
 import Placing from './pages/Placing.vue'
+import AboutUs from './pages/AboutUs.vue'
 
 const app = createApp(App)
 
@@ -28,7 +29,8 @@ const routes = [
   { path: '/pastula', name: 'pastula', component: Pastula },
   { path: '/jerki', name: 'jerki', component: Jerki },
   { path: '/box', name: 'box', component: Box },
-  { path: '/placing', name: 'placing', component: Placing }
+  { path: '/placing', name: 'placing', component: Placing },
+  { path: '/aboutUs', name: 'aboutUs', component: AboutUs }
 ]
 
 const router = createRouter({

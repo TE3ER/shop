@@ -7,7 +7,7 @@ const items = ref([])
 onMounted(async () => {
   try {
     const { data } = await axios.get('https://664dd20aede9a2b5565505ef.mockapi.io/items')
-    // Фільтруємо товари з "type": "1"
+
     items.value = data.filter((item) => item.type === 'pastyla')
   } catch (err) {
     console.log(err)

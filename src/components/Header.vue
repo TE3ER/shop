@@ -1,6 +1,7 @@
 <script setup>
 defineProps({
-  totalPrice: Number
+  totalPrice: Number,
+  itemCount: Number
 })
 
 const emit = defineEmits(['OpenBasket', 'OpenCategory'])
@@ -8,55 +9,56 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
 
 <template v-auto-animate>
   <header
-    class="sticky top-0 z-10 bg-white flex justify-between border-b border-slate-200 px-10 py-8 max-sm:flex max-sm:items-center"
+    class="sticky top-0 z-10 bg-white flex justify-between items-center border-b border-slate-200 px-6 py-2 max-sm:px-4 max-sm:py-1"
     v-auto-animate
   >
     <div @click="() => emit('OpenCategory')">
       <svg
-        class="w-20 h-20 sm:hidden"
+        class="w-10 h-10 sm:hidden"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth="{1.5}"
+        stroke-width="1.5"
         stroke="currentColor"
-        className="w-6 h-6"
       >
         <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          stroke-linecap="round"
+          stroke-linejoin="round"
           d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
         />
       </svg>
     </div>
-    <router-link to="/"
-      ><div class="flex items-center gap-4 md:grid max-sm:justify-center">
+    <router-link to="/">
+      <div class="flex items-center gap-4 md:grid max-sm:justify-center max-sm:static">
         <img
           src="/public/LOGO-removebg-preview.png"
           alt="LOGO"
-          class="w-60 bg-white w-48 h-48 rounded-full max-sm:w-20 max-sm:h-20"
-        /></div
-    ></router-link>
+          class="w-60 bg-white w-48 h-48 rounded-full max-sm:w-24 max-sm:h-24 max-sm:pl-4"
+        />
+      </div>
+    </router-link>
 
     <ul
       class="flex items-center gap-20 max-sm:gap-1 max-sm:flex max-md:grid max-lg:grid max-xl:grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3"
     >
-      <router-link to="/"
-        ><li
+      <router-link to="/">
+        <li
           class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Головна</span>
         </li>
       </router-link>
 
-      <router-link to="/menu"
-        ><li
+      <router-link to="/menu">
+        <li
           class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Меню</span>
         </li>
       </router-link>
-      <router-link to="/contacts"
-        ><li
+
+      <router-link to="/contacts">
+        <li
           class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Контакти</span>
@@ -68,16 +70,25 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
           class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Оплата</span>
-        </li></router-link
-      >
+        </li>
+      </router-link>
 
       <li
         @click="() => emit('OpenBasket')"
-        class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center"
+        class="flex items-center cursor-pointer gap-3 text-black max-sm:flex-col max-sm:gap-1 max-sm:text-lg text-3xl font-bold hover:text-gray-500 max-sm:justify-center relative"
         v-auto-animate
       >
-        <img src="/public/cart.svg" alt="cart" />
-        <b>{{ totalPrice }} грн </b>
+        <div class="relative">
+          <div
+            class="absolute top-[-10px] right-[-10px] bg-red-500 rounded-full w-4 h-4 flex items-center justify-center text-white"
+            :style="{ 'font-size': itemCount > 99 ? '10px' : '8px' }"
+          >
+            {{ itemCount }}
+          </div>
+          <img src="/public/cart.svg" alt="cart" />
+        </div>
+
+        <b>{{ totalPrice }} грн</b>
       </li>
     </ul>
   </header>

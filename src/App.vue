@@ -1,8 +1,6 @@
 <script setup>
 import axios from 'axios'
-
 import { onMounted, computed, provide, ref } from 'vue'
-
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Basket from './components/Basket.vue'
@@ -17,14 +15,12 @@ const totalPrice = computed(() => cart.value.reduce((acc, item) => acc + item.pr
 
 const addToCart = (item) => {
   cart.value.push(item)
-  //console.log(cart)
   message.value = `Додано в кошик`
   showMessage()
 }
 
 const removeToCart = (item) => {
   cart.value.splice(cart.value.indexOf(item), 1)
-  //console.log(cart)
   message.value = `Видалено з кошика`
   showMessage()
 }
@@ -57,8 +53,8 @@ const message = ref('')
 
 const showMessage = () => {
   setTimeout(() => {
-    message.value = '' // Після певного часу приховати повідомлення
-  }, 7000) // Час показу повідомлення у мілісекундах (наприклад, 3000 = 3 секунди)
+    message.value = ''
+  }, 7000)
 }
 
 provide('cart', {
@@ -72,6 +68,8 @@ provide('cart', {
 })
 
 provide('totalPrice', totalPrice)
+
+const itemCount = computed(() => cart.value.length)
 </script>
 
 <template>
@@ -80,7 +78,12 @@ provide('totalPrice', totalPrice)
   <Category v-if="categoryOpen" />
 
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
-    <Header :total-price="totalPrice" @Open-Basket="OpenBasket" @Open-Category="OpenCategory" />
+    <Header
+      :total-price="totalPrice"
+      :item-count="itemCount"
+      @Open-Basket="OpenBasket"
+      @Open-Category="OpenCategory"
+    />
     <div class="p-10 mb-14">
       <router-view></router-view>
     </div>

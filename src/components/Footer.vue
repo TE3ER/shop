@@ -19,7 +19,7 @@ export default {
           <div class="flex justify-center lg:justify-start">
             <a
               href="https://www.instagram.com/chips_shop.ua?igsh=cTAyNnUzaDViZTlh"
-              class="mt-2 inline-block"
+              class="mt-2 inline-block hover:shadow-[0_35px_60px_-15px_rgba(255,105,180,1)]"
             >
               <img
                 src="/public/Instagram_icon.png.webp"
@@ -27,14 +27,20 @@ export default {
                 class="w-12 h-12 rounded-full border-2 border-white hover-rotate-360 transition duration-300 hover:shadow-lg ml-2"
               />
             </a>
-            <a href="https://t.me/TE33ER" class="mt-2 inline-block">
+            <a
+              href="https://t.me/TE33ER"
+              class="mt-2 inline-block hover:shadow-[0_35px_60px_-15px_rgba(0,136,204,1)]"
+            >
               <img
                 src="/public/Telegram_logo.svg.webp"
                 alt="Telegram_icon"
                 class="w-12 h-12 rounded-full border-2 border-white hover-rotate-360 transition duration-300 hover:shadow-lg ml-2"
               />
             </a>
-            <a href="viber://chat?number=0672199123" class="mt-2 inline-block">
+            <a
+              href="viber://chat?number=0672199123"
+              class="mt-2 inline-block hover:shadow-[0_35px_60px_-15px_rgba(128,0,128,1)]"
+            >
               <img
                 src="/public/vibersvg.svg"
                 alt="Viber_logo_2018_"
@@ -52,6 +58,12 @@ export default {
                 ><i class="fas fa-phone-alt"></i> +380672199123</a
               >
             </div>
+          </div>
+
+          <div class="lg:mt-0 max-sm:mt-10">
+            <router-link to="/aboutUs" @click="scrollToTop">
+              <h3 class="text-lg font-bold mb-2">Про нас</h3>
+            </router-link>
           </div>
         </div>
         <div class="flex flex-col text-center lg:text-left lg:mb-4 items-center lg:items-start">
