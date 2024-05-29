@@ -22,15 +22,16 @@
                 src="/public/Telegram_logo.svg.webp"
                 alt="Фріпси"
               />
-            </a>
-            <span
-              class="m-0 box-border text-xs ont-sans text-amber-900 absolute bottom-0 w-full p-9"
-            >
+
               <span
-                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
-                >Telegram<i class="bi bi-arrow-up-right"></i>
+                class="m-0 box-border text-xs ont-sans text-amber-900 absolute bottom-0 w-full p-9"
+              >
+                <span
+                  class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
+                  >Telegram<i class="bi bi-arrow-up-right"></i>
+                </span>
               </span>
-            </span>
+            </a>
           </div>
 
           <div
@@ -42,15 +43,16 @@
                 src="/public/Instagram_icon.png.webp"
                 alt="Фріпси"
               />
-            </a>
-            <span
-              class="m-0 box-border text-xs ont-sans text-amber-900 absolute bottom-0 w-full p-9"
-            >
+
               <span
-                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
-                >Instagram<i class="bi bi-arrow-up-right"></i>
+                class="m-0 box-border text-xs ont-sans text-amber-900 absolute bottom-0 w-full p-9"
+              >
+                <span
+                  class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
+                  >Instagram<i class="bi bi-arrow-up-right"></i>
+                </span>
               </span>
-            </span>
+            </a>
           </div>
           <div
             class="relative m-0 p-0 box-border text-xs text-slate-950 ont-sans ease-in no-underline border-2 border-solid-black relative rounded-3xl hover:shadow-[0_35px_60px_-15px_rgba(128,0,128,1)] transition hover:-translate-y-2"
@@ -61,15 +63,16 @@
                 src="/public/vibersvg.svg"
                 alt="Фріпси"
               />
-            </a>
-            <span
-              class="m-0 box-border text-xs ont-sans text-amber-900 absolute bottom-0 w-full p-9"
-            >
+
               <span
-                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
-                >Viber<i class="bi bi-arrow-up-right"></i>
+                class="m-0 box-border text-xs ont-sans text-amber-900 absolute bottom-0 w-full p-9"
+              >
+                <span
+                  class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
+                  >Viber<i class="bi bi-arrow-up-right"></i>
+                </span>
               </span>
-            </span>
+            </a>
           </div>
         </div>
       </div>
