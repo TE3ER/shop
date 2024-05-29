@@ -100,6 +100,9 @@ export default {
         </div>
       </div>
     </div>
+    <div class="text-center text-gray-500 text-sm mt-4">
+      Chips-shop.ua - Інтернет-магазин крафтових снеків © 2024
+    </div>
   </footer>
 </template>
 
