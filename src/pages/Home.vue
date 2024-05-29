@@ -20,7 +20,7 @@ const fetchItems = async () => {
   try {
     const { data } = await axios.get(`https://664dd20aede9a2b5565505ef.mockapi.io/items`)
     items.value = data
-    onSearchItems() // Фільтруємо після отримання даних
+    onSearchItems()
   } catch (err) {
     console.log(err)
   }

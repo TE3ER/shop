@@ -26,7 +26,7 @@ const formValid = ref(false) // Initialize form validity
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const phoneRegex = /^\+?\d{10,15}$/
 
-// Function to validate form fields
+// функція перевіряє форму на коректність заповнення
 const validateForm = () => {
   nameError.value = name.value ? '' : 'Це поле не має бути пустим'
   deliveryError.value = delivery.value ? '' : 'Це поле не має бути пустим'
@@ -49,7 +49,7 @@ const validateForm = () => {
     !payError.value
 }
 
-// Function to adjust the height of the textarea
+// функція адаптує висоту текстового поля textarea автоматично, коли користувач вводить текст
 const adjustTextareaHeight = (event) => {
   const textarea = event.target
   textarea.style.height = 'auto'
@@ -65,7 +65,7 @@ watch(comment, () => {
   }
 })
 
-// Function to submit the order
+// функція викликає validateForm для перевірки валідності форми перед відправленням замовленняr
 const submitOrder = async () => {
   validateForm()
   if (!formValid.value) {
@@ -116,6 +116,7 @@ const clearForm = () => {
 
 <template>
   <div class="flex items-center gap-20 flex-col">
+    <h2 class="text-3xl font-bold mb-8">Оформлення замовлення</h2>
     <div class="w-full">
       <input
         v-model="name"
