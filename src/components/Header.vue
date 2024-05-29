@@ -43,7 +43,7 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
     >
       <router-link to="/">
         <li
-          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Головна</span>
         </li>
@@ -51,7 +51,7 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
 
       <router-link to="/menu">
         <li
-          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Меню</span>
         </li>
@@ -59,7 +59,7 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
 
       <router-link to="/contacts">
         <li
-          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Контакти</span>
         </li>
@@ -67,7 +67,7 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
 
       <router-link to="/pay">
         <li
-          class="flex items-center cursor-pointer gap-3 text-black text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Оплата</span>
         </li>
@@ -75,7 +75,7 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
 
       <li
         @click="() => emit('OpenBasket')"
-        class="flex items-center cursor-pointer gap-3 text-black max-sm:flex-col max-sm:gap-1 max-sm:text-lg text-3xl font-bold hover:text-gray-500 max-sm:justify-center relative"
+        class="flex items-center cursor-pointer gap-3 text-orange-800 max-sm:flex-col max-sm:gap-1 max-sm:text-lg text-3xl font-bold hover:text-gray-500 max-sm:justify-center relative"
         v-auto-animate
       >
         <div class="relative">

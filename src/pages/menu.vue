@@ -5,7 +5,7 @@
         class="box-border text-xs text-amber-900 ont-sans ease-in max-w-7xl m-auto w-full py-0 px-20 max-sm:px-0"
       >
         <h1
-          class="m-0 p-0 box-border ont-sans ease-in pb-12 text-6xl font-semibold text-black max-sm:text-2xl"
+          class="m-0 p-0 text-orange-800 box-border ont-sans ease-in pb-12 text-6xl font-semibold text-black max-sm:text-2xl"
         >
           Наші категорії
         </h1>
