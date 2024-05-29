@@ -8,7 +8,7 @@ import Vue2TouchEvents from 'vue2-touch-events'
 import App from './App.vue'
 
 import Home from './pages/Home.vue'
-import Menu from './pages/menu.vue'
+import Menu from './menu.vue'
 import Contacts from './pages/Contacts.vue'
 import Pay from './pages/Pay.vue'
 import Chips from './pages/Chips.vue'
