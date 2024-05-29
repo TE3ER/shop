@@ -5,6 +5,13 @@ defineProps({
 })
 
 const emit = defineEmits(['OpenBasket', 'OpenCategory'])
+
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
 </script>
 
 <template v-auto-animate>
@@ -14,7 +21,7 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
   >
     <div @click="() => emit('OpenCategory')">
       <svg
-        class="w-10 h-10 sm:hidden"
+        class="w-10 h-10 lg:hidden text-orange-800"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -28,46 +35,58 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
         />
       </svg>
     </div>
-    <router-link to="/">
-      <div class="flex items-center gap-4 md:grid max-sm:justify-center max-sm:static">
+    <router-link to="/" @click="scrollToTop">
+      <div
+        class="flex items-center gap-4 lg:hidden max-sm:justify-center max-md:justify-center max-sm:static max-md:static"
+      >
         <img
           src="/public/LOGO-removebg-preview.png"
           alt="LOGO"
-          class="w-60 bg-white w-48 h-48 rounded-full max-sm:w-24 max-sm:h-24 max-sm:pl-4"
+          class="bg-white w-48 h-48 rounded-full max-md:w-24 max-md:h-24 max-sm:w-24 max-sm:h-24"
         />
       </div>
     </router-link>
 
     <ul
-      class="flex items-center gap-20 max-sm:gap-1 max-sm:flex max-md:grid max-lg:grid max-xl:grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3"
+      class="flex items-center gap-32 max-md:gap-0 max-sm:gap-2 max-sm:flex-col max-md:flex-col max-lg:flex-row"
     >
-      <router-link to="/">
+      <router-link to="/" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-2xl font-bold hover:text-gray-500 max-sm:justify-center max-lg:hidden"
         >
           <span>Головна</span>
         </li>
       </router-link>
 
-      <router-link to="/menu">
+      <router-link to="/menu" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-2xl font-bold hover:text-gray-500 max-sm:justify-center max-lg:hidden"
         >
           <span>Меню</span>
         </li>
       </router-link>
-
-      <router-link to="/contacts">
+      <router-link to="/" @click="scrollToTop">
+        <div
+          class="flex items-center gap-4 pl-4 max-md:hidden max-sm:hidden max-sm:justify-center max-md:justify-center max-sm:static max-md:static"
+        >
+          <img
+            src="/public/LOGO-removebg-preview.png"
+            alt="LOGO"
+            class="bg-white w-48 h-48 rounded-full max-md:w-24 max-md:h-24 max-sm:w-24 max-sm:h-24"
+          />
+        </div>
+      </router-link>
+      <router-link to="/contacts" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-2xl font-bold hover:text-gray-500 max-sm:justify-center max-lg:hidden"
         >
           <span>Контакти</span>
         </li>
       </router-link>
 
-      <router-link to="/pay">
+      <router-link to="/pay" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-2xl font-bold hover:text-gray-500 max-sm:justify-center max-lg:hidden"
         >
           <span>Оплата</span>
         </li>
@@ -75,7 +94,7 @@ const emit = defineEmits(['OpenBasket', 'OpenCategory'])
 
       <li
         @click="() => emit('OpenBasket')"
-        class="flex items-center cursor-pointer gap-3 text-orange-800 max-sm:flex-col max-sm:gap-1 max-sm:text-lg text-3xl font-bold hover:text-gray-500 max-sm:justify-center relative"
+        class="flex items-center cursor-pointer gap-3 text-orange-800 max-sm:flex-col max-sm:gap-1 max-sm:text-lg text-2xl font-bold hover:text-gray-500 max-sm:justify-center relative"
         v-auto-animate
       >
         <div class="relative">
