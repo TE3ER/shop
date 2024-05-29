@@ -30,6 +30,6 @@ const { CloseBasket } = inject('cart')
         stroke-linejoin="round"
       />
     </svg>
-    <h2 class="text-2xl font-bold">Кошик</h2>
+    <h2 class="text-2xl font-bold text-orange-800">Кошик</h2>
   </div>
 </template>
