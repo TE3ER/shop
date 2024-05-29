@@ -116,7 +116,7 @@ const clearForm = () => {
 
 <template>
   <div class="flex items-center gap-20 flex-col">
-    <h2 class="text-3xl font-bold mb-8">Оформлення замовлення</h2>
+    <h2 class="text-3xl font-bold mb-8 text-orange-800">Оформлення замовлення</h2>
     <div class="w-full">
       <input
         v-model="name"
