@@ -5,7 +5,6 @@ defineProps({
 })
 
 const emit = defineEmits(['OpenBasket', 'OpenCategory'])
-
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -16,12 +15,12 @@ const scrollToTop = () => {
 
 <template v-auto-animate>
   <header
-    class="sticky top-0 z-10 bg-white flex justify-between items-center border-b border-slate-200 px-6 py-2 max-sm:px-4 max-sm:py-1"
+    class="sticky top-0 z-10 bg-white flex justify-between items-center border-b border-slate-200 px-6 py-2 max-sm:px-4 max-sm:py-1 border rounded-3xl"
     v-auto-animate
   >
     <div @click="() => emit('OpenCategory')">
       <svg
-        class="w-10 h-10 lg:hidden text-orange-800"
+        class="w-10 h-10 sm:hidden md:hidden text-orange-800"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -36,23 +35,20 @@ const scrollToTop = () => {
       </svg>
     </div>
     <router-link to="/" @click="scrollToTop">
-      <div
-        class="flex items-center gap-4 lg:hidden max-sm:justify-center max-md:justify-center max-sm:static max-md:static"
-      >
+      <div class="flex items-center gap-4 md:grid max-sm:justify-center max-sm:static">
         <img
           src="/public/LOGO-removebg-preview.png"
           alt="LOGO"
-          class="bg-white w-48 h-48 rounded-full max-md:w-24 max-md:h-24 max-sm:w-24 max-sm:h-24"
+          class="w-60 bg-white w-48 h-48 rounded-full max-sm:w-24 max-sm:h-24 max-sm:pl-4"
         />
       </div>
     </router-link>
-
     <ul
-      class="flex items-center gap-32 max-md:gap-0 max-sm:gap-2 max-sm:flex-col max-md:flex-col max-lg:flex-row"
+      class="flex items-center gap-10 max-sm:gap-1 max-md:items-center max-sm:flex max-md:grid max-lg:grid max-xl:grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3"
     >
       <router-link to="/" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer gap-3 text-orange-800 text-2xl font-bold hover:text-gray-500 max-sm:justify-center max-lg:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Головна</span>
         </li>
@@ -60,25 +56,15 @@ const scrollToTop = () => {
 
       <router-link to="/menu" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer gap-3 text-orange-800 text-2xl font-bold hover:text-gray-500 max-sm:justify-center max-lg:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Меню</span>
         </li>
       </router-link>
-      <router-link to="/" @click="scrollToTop">
-        <div
-          class="flex items-center gap-4 pl-4 max-md:hidden max-sm:hidden max-sm:justify-center max-md:justify-center max-sm:static max-md:static"
-        >
-          <img
-            src="/public/LOGO-removebg-preview.png"
-            alt="LOGO"
-            class="bg-white w-48 h-48 rounded-full max-md:w-24 max-md:h-24 max-sm:w-24 max-sm:h-24"
-          />
-        </div>
-      </router-link>
+
       <router-link to="/contacts" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer gap-3 text-orange-800 text-2xl font-bold hover:text-gray-500 max-sm:justify-center max-lg:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Контакти</span>
         </li>
@@ -86,7 +72,7 @@ const scrollToTop = () => {
 
       <router-link to="/pay" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer gap-3 text-orange-800 text-2xl font-bold hover:text-gray-500 max-sm:justify-center max-lg:hidden"
+          class="flex items-center cursor-pointer gap-3 text-orange-800 text-3xl font-bold hover:text-gray-500 max-sm:justify-center max-sm:hidden"
         >
           <span>Оплата</span>
         </li>
@@ -94,7 +80,7 @@ const scrollToTop = () => {
 
       <li
         @click="() => emit('OpenBasket')"
-        class="flex items-center cursor-pointer gap-3 text-orange-800 max-sm:flex-col max-sm:gap-1 max-sm:text-lg text-2xl font-bold hover:text-gray-500 max-sm:justify-center relative"
+        class="flex items-center cursor-pointer gap-3 text-orange-800 max-sm:flex-col max-sm:gap-1 max-sm:text-lg text-3xl font-bold hover:text-gray-500 max-sm:justify-center relative"
         v-auto-animate
       >
         <div class="relative">
