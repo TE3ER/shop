@@ -44,7 +44,7 @@ const scrollToTop = () => {
       </div>
     </router-link>
     <ul
-      class="flex items-center gap-10 max-sm:gap-1 max-md:items-center max-sm:flex max-md:grid max-lg:grid max-xl:grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3"
+      class="flex items-center gap-28 max-sm:gap-1 max-md:items-center max-sm:flex max-md:grid max-lg:grid max-xl:grid max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2 max-xl:grid-cols-3"
     >
       <router-link to="/" @click="scrollToTop">
         <li
