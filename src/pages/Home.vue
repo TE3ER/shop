@@ -52,7 +52,7 @@ const onClickAddPlus = (item) => {
           @input="onSearchItems"
           class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gay-400 sm:text-sm sm:leading-6"
           placeholder="Шукати"
-          style="width: calc(100% - 3rem)"
+          style="width: calc(100% - 0rem)"
         />
       </div>
     </div>
