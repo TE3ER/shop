@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <div class="flex items-center border border-slate-200 p-4 rounded-xl gap-4">
-    <img class="w-16 h-16" :src="imageUrl" alt="sneakers-1" />
+    <img class="w-16 h-16" :src="imageUrl" alt="food" />
 
     <div class="flex flex-col flex-1">
       <p>{{ title }}</p>
