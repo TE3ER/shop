@@ -12,7 +12,7 @@
               :alt="item.title"
             />
             <span
-              class="m-0 lg:h-2/3 box-border rounded-xl text-xs ont-sans text-amber-900 absolute items-center justify-center bottom-0 w-full"
+              class="m-0 lg:h-2/3 box-border rounded-3xl text-xs ont-sans text-amber-900 absolute items-center justify-center bottom-0 w-full"
             >
               <span
                 class="m-0 box-border max-sm:h-12 max-sm:text-xs max-lg:h-24 ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-1/2 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm lg:text-7xl"
