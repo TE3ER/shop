@@ -35,7 +35,7 @@ const scrollToTop = () => {
       </svg>
     </div>
     <ul class="flex items-center gap-4 lg:gap-20">
-      <router-link to="/" @click="scrollToTop">
+      <router-link to="/" @click="scrollToTop" class="">
         <li
           class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 max-sm:hidden"
         >

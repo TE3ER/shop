@@ -7,15 +7,15 @@
             class="relative transition box-border text-xs text-slate-950 ont-sans ease-in no-underline border-2 border-solid-black relative rounded-3xl items-center"
           >
             <img
-              class="m-0 p-0 box-border text-xs text-amber-900 ont-sans items-center ease-in block w-full rounded-3xl max-h-80 min-h-80 object-cover max-sm:max-h-40 max-sm:min-h-40 max-sm:max-h-150 max-sm:min-h-150 max-sm:w-full"
+              class="m-0 p-0 box-border text-xs text-amber-900 ont-sans items-center ease-in block w-full rounded-3xl max-h-auto min-h-auto object-cover max-sm:max-h-40 max-sm:min-h-40 max-sm:max-h-150 max-sm:min-h-150 max-sm:w-full"
               :src="item.image"
               :alt="item.title"
             />
             <span
-              class="m-0 box-border text-xs ont-sans text-amber-900 absolute items-center justify-center bottom-0 w-full"
+              class="m-0 lg:h-2/3 box-border rounded-xl text-xs ont-sans text-amber-900 absolute items-center justify-center bottom-0 w-full"
             >
               <span
-                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
+                class="m-0 box-border max-sm:h-12 max-sm:text-xs max-lg:h-24 ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-1/2 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm lg:text-7xl"
                 >{{ item.title }}<i class="bi bi-arrow-up-right"></i>
               </span>
             </span>
@@ -30,10 +30,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const items = ref([
-  { title: 'Фріпси', image: '/public/Fripsu.jpg', link: '/chips' },
-  { title: 'Пастила', image: '/public/Pastula.jpg', link: '/pastula' },
-  { title: 'Джерки та ковбаски', image: '/public/Jerki.jpg', link: '/jerki' },
-  { title: 'Бокси', image: '/public/Box.jpg', link: '/box' }
+  { title: 'Фріпси', image: '/public/miks-fripsiv (1).jpg', link: '/chips' },
+  { title: 'Пастила', image: '/public/Pastila_Bez.jpg', link: '/pastula' },
+  { title: 'Джерки та ковбаски', image: '/public/jerkiFOTO.jpeg', link: '/jerki' },
+  { title: 'Бокси', image: '/public/BOKSnew (1).jpg', link: '/box' }
 ])
 
 const currentIndex = ref(0)
