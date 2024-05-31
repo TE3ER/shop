@@ -1,5 +1,7 @@
 <template>
-  <div class="relative bg-white rounded-3xl p-8 max-sm:px-0 m-0 p-0 box-border">
+  <div
+    class="relative bg-white rounded-3xl p-8 max-sm:px-0 m-0 p-0 box-border border border-orange-800 rounded-3xl"
+  >
     <div class="rounded-lg p-8">
       <h1 class="text-2xl font-bold mb-4">Історія Chips-shop.ua</h1>
       <p class="text-lg text-gray-700 mb-4">
@@ -22,7 +24,9 @@
       </p>
     </div>
   </div>
-  <div class="relative bg-white rounded-3xl p-8 max-sm:px-0 m-0 p-0 box-border">
+  <div
+    class="relative bg-white rounded-3xl p-8 max-sm:px-0 m-0 p-0 box-border border border-orange-800 rounded-3xl mt-4"
+  >
     <div class="rounded-lg p-8">
       <h1 class="text-2xl font-bold mb-4">Як ми змінювались</h1>
       <p class="text-lg text-gray-700 mb-4">
@@ -41,7 +45,9 @@
       </p>
     </div>
   </div>
-  <div class="m-0 p-0 box-border text-xs text-red-950 ont-sans ease-in mt-32 max-sm:mt-1.5">
+  <div
+    class="m-0 p-0 box-border text-xs text-red-950 ont-sans ease-in mt-32 max-sm:mt-1.5 border border-orange-800 rounded-3xl"
+  >
     <div
       class="box-border text-xs text-amber-900 ont-sans ease-in max-w-7xl m-auto w-full py-0 px-20 max-sm:px-0"
     >

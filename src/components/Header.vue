@@ -37,7 +37,7 @@ const scrollToTop = () => {
     <ul class="flex items-center gap-4 lg:gap-20">
       <router-link to="/" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl font-bold hover:text-gray-500 max-sm:hidden"
+          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 max-sm:hidden"
         >
           <span>Головна</span>
         </li>
@@ -45,7 +45,7 @@ const scrollToTop = () => {
 
       <router-link to="/menu" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl font-bold hover:text-gray-500 max-sm:hidden"
+          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 max-sm:hidden"
         >
           <span>Меню</span>
         </li>
@@ -65,7 +65,7 @@ const scrollToTop = () => {
     <ul class="flex items-center gap-4 lg:gap-20">
       <router-link to="/contacts" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl font-bold hover:text-gray-500 max-sm:hidden"
+          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 max-sm:hidden"
         >
           <span>Контакти</span>
         </li>
@@ -73,7 +73,7 @@ const scrollToTop = () => {
 
       <router-link to="/pay" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl font-bold hover:text-gray-500 max-sm:hidden"
+          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 max-sm:hidden"
         >
           <span>Оплата</span>
         </li>
@@ -81,7 +81,7 @@ const scrollToTop = () => {
 
       <li
         @click="() => emit('OpenBasket')"
-        class="flex flex-col sm:flex-row items-center cursor-pointer text-orange-800 text-xl lg:text-3xl font-bold hover:text-gray-500 relative"
+        class="flex flex-col sm:flex-row items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 relative"
         v-auto-animate
       >
         <div class="relative flex items-center">
