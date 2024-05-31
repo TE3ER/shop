@@ -1,5 +1,7 @@
 <template>
-  <div class="relative bg-white border border-slate-100 rounded-3xl p-8 transition hover:shadow-xl">
+  <div
+    class="relative bg-white border border-orange-800 rounded-3xl p-8 transition hover:shadow-xl"
+  >
     <div>
       <div>
         <h1 class="text-3xl font-bold mb-8 text-orange-800">Зворотній зв’язок</h1>

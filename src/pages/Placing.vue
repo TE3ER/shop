@@ -115,7 +115,7 @@ const clearForm = () => {
 </script>
 
 <template>
-  <div class="flex items-center gap-20 flex-col">
+  <div class="flex items-center gap-20 flex-col mb-12">
     <h2 class="text-3xl font-bold mb-8 text-orange-800">Оформлення замовлення</h2>
     <div class="w-full">
       <input
@@ -173,7 +173,6 @@ const clearForm = () => {
       <p v-if="deliveryError" class="text-red-500 text-sm">{{ deliveryError }}</p>
     </div>
   </div>
-
   <CardItemList />
 
   <div class="flex flex-col gap-4 mt-7">

@@ -26,7 +26,9 @@ const onClickAddPlus = (item) => {
 </script>
 
 <template>
-  <div class="flex justify-between items=center max-sm:grid max-sm:grid-cols-1">
+  <div
+    class="flex justify-between items=center max-sm:grid max-sm:grid-cols-1 border border-orange-800 rounded-3xl p-8"
+  >
     <h2 class="text-3xl font-bold text-orange-800 mb-8">Джерки</h2>
   </div>
   <CardList :items="items" @add-to-cart="onClickAddPlus" />

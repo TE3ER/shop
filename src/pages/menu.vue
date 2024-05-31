@@ -1,5 +1,7 @@
 <template>
-  <div class="relative bg-white rounded-3xl p-8 max-sm:px-0">
+  <div
+    class="relative bg-white rounded-3xl p-8 max-sm:px-0 border border-orange-800 rounded-3xl p-8"
+  >
     <div class="m-0 p-0 box-border text-xs text-red-950 ont-sans ease-in mt-10 max-sm:mt-1.5">
       <div
         class="box-border text-xs text-amber-900 ont-sans ease-in max-w-7xl m-auto w-full py-0 px-20 max-sm:px-0"

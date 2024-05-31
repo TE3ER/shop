@@ -1,6 +1,40 @@
+<template>
+  <div class="mb-12 border border-orange-800 rounded-3xl p-8">
+    <h2 class="text-3xl text-orange-800 font-bold mb-8">Наше смачне меню</h2>
+    <Slider :items="items" />
+  </div>
+  <div class="border border-orange-800 rounded-3xl p-8">
+    <div class="flex justify-between items-center max-sm:grid max-sm:grid-cols-1">
+      <h2 class="text-3xl text-orange-800 font-bold mb-8">Всі товари</h2>
+      <div class="justify-center">
+        <div class="relative max-sm:grid max-sm:pb-4 max-sm:px-4 max-sm:mr-6">
+          <img class="absolute left-6 top-3" src="/public/search.svg" alt="" />
+          <input
+            v-model="filter.searchItems"
+            @input="onSearchItems"
+            class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6"
+            placeholder="Шукати"
+            style="width: calc(100% - 0rem)"
+          />
+        </div>
+      </div>
+    </div>
+    <transition-group name="fade" tag="div" class="grid grid-cols-1 gap-4">
+      <CardList
+        v-if="filteredItems.length > 0"
+        :items="filteredItems"
+        @add-to-cart="onClickAddPlus"
+        key="cardlist"
+      />
+      <div v-else class="text-lg text-gray-500">Немає товарів, що відповідають вашому запиту.</div>
+    </transition-group>
+  </div>
+</template>
+
 <script setup>
 import axios from 'axios'
 import CardList from '../components/CardList.vue'
+import Slider from '../components/Slider.vue'
 import { onMounted, inject, ref, watch, reactive } from 'vue'
 
 const items = ref([])
@@ -40,33 +74,6 @@ const onClickAddPlus = (item) => {
   }
 }
 </script>
-
-<template>
-  <div class="flex justify-between items-center max-sm:grid max-sm:grid-cols-1">
-    <h2 class="text-3xl text-orange-800 font-bold mb-8">Всі товари</h2>
-    <div class="justify-center">
-      <div class="relative max-sm:grid max-sm:pb-4 max-sm:px-4 max-sm:mr-6">
-        <img class="absolute left-6 top-3" src="/public/search.svg" alt="" />
-        <input
-          v-model="filter.searchItems"
-          @input="onSearchItems"
-          class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gay-400 sm:text-sm sm:leading-6"
-          placeholder="Шукати"
-          style="width: calc(100% - 0rem)"
-        />
-      </div>
-    </div>
-  </div>
-  <transition-group name="fade" tag="div" class="grid grid-cols-1 gap-4">
-    <CardList
-      v-if="filteredItems.length > 0"
-      :items="filteredItems"
-      @add-to-cart="onClickAddPlus"
-      key="cardlist"
-    />
-    <div v-else class="text-lg text-gray-500">Немає товарів, що відповідають вашому запиту.</div>
-  </transition-group>
-</template>
 
 <style scoped>
 .fade-enter-active,
