@@ -4,5 +4,19 @@
 
 
 body {
-    background-color: rgb(182, 243, 146);
+    background-image: url('/imgonline-com-ua-Blur-srT2BHv4uA6.jpg');
+    background-size: cover;
+
+    /* Зображення покриває весь екран */
+    background-position: center;
+    /* Центрує зображення */
+    background-repeat: no-repeat;
+    /* Вимикає повторення зображення */
+
+
+}
+
+.photo {
+    filter: blur(5px);
+    /* Додаємо фільтр розмиття тільки до елементів з класом .photo */
 }
