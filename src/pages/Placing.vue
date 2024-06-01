@@ -167,7 +167,7 @@ const clearForm = () => {
       <input
         v-model="delivery"
         class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6 w-full"
-        placeholder="Доставка"
+        placeholder="Доставка (Нова Пошта, №відділення та населений пункт)"
         @blur="validateForm"
       />
       <p v-if="deliveryError" class="text-red-500 text-sm">{{ deliveryError }}</p>
