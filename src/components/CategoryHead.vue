@@ -63,12 +63,12 @@
     </router-link>
   </ul>
   <div class="lg:mt-0 max-sm:mt-4">
-    <router-link to="/aboutUs" @click="scrollToTop">
+    <router-link to="/aboutUs" @click="closeCategoryAndScrollToTop">
       <h3 class="text-lg font-bold mb-2">Про нас</h3>
     </router-link>
   </div>
   <div class="lg:mt-0 max-sm:mt-4">
-    <router-link to="/contacts" @click="scrollToTop">
+    <router-link to="/contacts" @click="closeCategoryAndScrollToTop">
       <h3 class="text-lg font-bold mb-2">Контакти</h3>
     </router-link>
   </div>

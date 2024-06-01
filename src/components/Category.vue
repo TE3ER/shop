@@ -8,6 +8,12 @@ defineProps({
   totalPrice: Number
 })
 
+const scrollToTop = () => {
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+}
+
 let startX = 0
 let currentX = 0
 
