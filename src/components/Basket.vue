@@ -61,7 +61,7 @@ const handleTouchEnd = () => {
         <div class="flex-1 border-b border-dashed"></div>
         <b>{{ totalPrice }} ₴</b>
       </div>
-      <router-link to="/placing">
+      <router-link to="/myapp/placing">
         <button
           @click="closeBasketAndScrollToTop"
           :disabled="totalPrice ? false : true"

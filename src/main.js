@@ -21,16 +21,16 @@ import AboutUs from './pages/AboutUs.vue'
 const app = createApp(App)
 
 const routes = [
-  { path: '/', name: 'home', component: Home },
-  { path: '/menu', name: 'menu', component: Menu },
-  { path: '/contacts', name: 'contacts', component: Contacts },
-  { path: '/pay', name: 'pay', component: Pay },
-  { path: '/chips', name: 'chips', component: Chips },
-  { path: '/pastula', name: 'pastula', component: Pastula },
-  { path: '/jerki', name: 'jerki', component: Jerki },
-  { path: '/box', name: 'box', component: Box },
-  { path: '/placing', name: 'placing', component: Placing },
-  { path: '/aboutUs', name: 'aboutUs', component: AboutUs }
+  { path: '/myapp/', name: 'home', component: Home },
+  { path: '/myapp/menu', name: 'menu', component: Menu },
+  { path: '/myapp/contacts', name: 'contacts', component: Contacts },
+  { path: '/myapp/pay', name: 'pay', component: Pay },
+  { path: '/myapp/chips', name: 'chips', component: Chips },
+  { path: '/myapp/pastula', name: 'pastula', component: Pastula },
+  { path: '/myapp/jerki', name: 'jerki', component: Jerki },
+  { path: '/myapp/box', name: 'box', component: Box },
+  { path: '/myapp/placing', name: 'placing', component: Placing },
+  { path: '/myapp/aboutUs', name: 'aboutUs', component: AboutUs }
 ]
 
 const router = createRouter({

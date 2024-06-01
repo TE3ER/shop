@@ -35,14 +35,14 @@ const scrollToTop = () => {
       </svg>
     </div>
     <ul class="flex items-center gap-4 lg:gap-24 lg:text-5xl lg:mr-1">
-      <router-link to="/menu" @click="scrollToTop">
+      <router-link to="/myapp/menu" @click="scrollToTop">
         <li
           class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-4xl md:text-2xl font-bold hover:text-gray-500 max-sm:hidden"
         >
           <span>Меню</span>
         </li>
       </router-link>
-      <router-link to="/contacts" @click="scrollToTop">
+      <router-link to="/myapp/contacts" @click="scrollToTop">
         <li
           class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-4xl md:text-2xl font-bold hover:text-gray-500 max-sm:hidden"
         >
@@ -51,7 +51,7 @@ const scrollToTop = () => {
       </router-link>
     </ul>
 
-    <router-link to="/" @click="scrollToTop" class="mx-">
+    <router-link to="/myapp/" @click="scrollToTop" class="mx-">
       <div class="flex justify-center items-center lg:px-36 max-sm:px-8">
         <img
           src="/public/LOGO-removebg-preview.png"
@@ -62,7 +62,7 @@ const scrollToTop = () => {
     </router-link>
 
     <ul class="flex items-center gap-4 lg:gap-20">
-      <router-link to="/pay" @click="scrollToTop">
+      <router-link to="/myapp/pay" @click="scrollToTop">
         <li
           class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-4xl md:text-2xl font-bold hover:text-gray-500 max-sm:hidden"
         >

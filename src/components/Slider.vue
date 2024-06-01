@@ -30,10 +30,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const items = ref([
-  { title: 'Фріпси', image: '/miks-fripsiv (1).jpg', link: '/chips' },
-  { title: 'Пастила', image: '/Pastila_Bez.jpg', link: '/pastula' },
-  { title: 'Джерки та ковбаски', image: '/jerkiFOTO.jpeg', link: '/jerki' },
-  { title: 'Бокси', image: '/BOKSnew (1).jpg', link: '/box' }
+  { title: 'Фріпси', image: '/miks-fripsiv (1).jpg', link: '/myapp/chips' },
+  { title: 'Пастила', image: '/Pastila_Bez.jpg', link: '/myapp/pastula' },
+  { title: 'Джерки та ковбаски', image: '/jerkiFOTO.jpeg', link: '/myapp/jerki' },
+  { title: 'Бокси', image: '/BOKSnew (1).jpg', link: '/myapp/box' }
 ])
 
 const currentIndex = ref(0)
