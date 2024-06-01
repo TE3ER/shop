@@ -61,7 +61,7 @@ export default {
           </div>
 
           <div class="lg:mt-0 max-sm:mt-10">
-            <router-link to="/myapp/aboutUs" @click="scrollToTop">
+            <router-link to="/aboutUs" @click="scrollToTop">
               <h3 class="text-lg font-bold mb-2">Про нас</h3>
             </router-link>
           </div>
@@ -76,22 +76,22 @@ export default {
         <div class="flex flex-col text-center lg:text-left lg:mb-4 items-center lg:items-start">
           <h3 class="text-2xl font-bold mb-2">Меню</h3>
           <ul>
-            <router-link to="/myapp/chips" @click="scrollToTop">
+            <router-link to="/chips" @click="scrollToTop">
               <li class="flex items-center cursor-pointer gap-3 text-white hover:text-gray-500">
                 <span>Фріпси</span>
               </li>
             </router-link>
-            <router-link to="/myapp/pastula" @click="scrollToTop">
+            <router-link to="/pastula" @click="scrollToTop">
               <li class="flex items-center cursor-pointer gap-3 text-white hover:text-gray-500">
                 <span>Пастила</span>
               </li>
             </router-link>
-            <router-link to="/myapp/jerki" @click="scrollToTop">
+            <router-link to="/jerki" @click="scrollToTop">
               <li class="flex items-center cursor-pointer gap-3 text-white hover:text-gray-500">
                 <span>Джерки</span>
               </li>
             </router-link>
-            <router-link to="/myapp/box" @click="scrollToTop">
+            <router-link to="/box" @click="scrollToTop">
               <li class="flex items-center cursor-pointer gap-3 text-white hover:text-gray-500">
                 <span>Бокси</span>
               </li>
