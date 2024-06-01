@@ -15,7 +15,7 @@ const onClickAdd = () => {
 
 <template>
   <div
-    class="grid grid-cols-4 lg:grid-cols-4 gap-5 max-sm:grid-cols-1 max-md:grid-cols-2 sm:grid-cols-2"
+    class="grid grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-1 md:grid-cols-2 max-md:grid-cols-2 lg:grid-cols-4 max-lg:grid-cols-4 gap-5"
     v-auto-animate
   >
     <Card

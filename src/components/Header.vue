@@ -15,7 +15,7 @@ const scrollToTop = () => {
 
 <template v-auto-animate>
   <header
-    class="sticky top-0 z-10 bg-white flex justify-between items-center border-b border-slate-200 px-6 py-2 max-sm:px-4 max-sm:py-1 border rounded-b-3xl"
+    class="sticky top-0 z-10 bg-white flex justify-center items-center border-b border-slate-200 px-22 py-2 max-sm:px-4 max-sm:py-1 border rounded-b-3xl"
     v-auto-animate
   >
     <div @click="() => emit('OpenCategory')">
@@ -34,26 +34,25 @@ const scrollToTop = () => {
         />
       </svg>
     </div>
-    <ul class="flex items-center gap-4 lg:gap-20">
-      <router-link to="/" @click="scrollToTop" class="">
-        <li
-          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 max-sm:hidden"
-        >
-          <span>Головна</span>
-        </li>
-      </router-link>
-
+    <ul class="flex items-center gap-4 lg:gap-24 lg:text-5xl lg:mr-1">
       <router-link to="/menu" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 max-sm:hidden"
+          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-4xl md:text-2xl font-bold hover:text-gray-500 max-sm:hidden"
         >
           <span>Меню</span>
         </li>
       </router-link>
+      <router-link to="/contacts" @click="scrollToTop">
+        <li
+          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-4xl md:text-2xl font-bold hover:text-gray-500 max-sm:hidden"
+        >
+          <span>Контакти</span>
+        </li>
+      </router-link>
     </ul>
 
-    <router-link to="/" @click="scrollToTop" class="mx-4">
-      <div class="flex justify-center items-center">
+    <router-link to="/" @click="scrollToTop" class="mx-">
+      <div class="flex justify-center items-center lg:px-36 max-sm:px-8">
         <img
           src="/public/LOGO-removebg-preview.png"
           alt="LOGO"
@@ -63,17 +62,9 @@ const scrollToTop = () => {
     </router-link>
 
     <ul class="flex items-center gap-4 lg:gap-20">
-      <router-link to="/contacts" @click="scrollToTop">
-        <li
-          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 max-sm:hidden"
-        >
-          <span>Контакти</span>
-        </li>
-      </router-link>
-
       <router-link to="/pay" @click="scrollToTop">
         <li
-          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 max-sm:hidden"
+          class="flex items-center cursor-pointer text-orange-800 text-xl lg:text-4xl md:text-2xl font-bold hover:text-gray-500 max-sm:hidden"
         >
           <span>Оплата</span>
         </li>
@@ -81,7 +72,7 @@ const scrollToTop = () => {
 
       <li
         @click="() => emit('OpenBasket')"
-        class="flex flex-col sm:flex-row items-center cursor-pointer text-orange-800 text-xl lg:text-3xl md:text-base font-bold hover:text-gray-500 relative"
+        class="flex flex-row sm:flex-row items-center cursor-pointer text-orange-800 text-xl lg:text-4xl md:text-base font-bold hover:text-gray-500 relative"
         v-auto-animate
       >
         <div class="relative flex items-center">
@@ -93,7 +84,7 @@ const scrollToTop = () => {
           </div>
           <img src="/public/cart.svg" alt="cart" />
         </div>
-        <b class="ml-2 sm:ml-2">{{ totalPrice }} грн</b>
+        <b class="ml-4 sm:ml-2 md:text-2xl lg:text-4xl max-sm:text-xs">{{ totalPrice }} грн</b>
       </li>
     </ul>
   </header>
