@@ -7,7 +7,7 @@
     <div class="flex justify-between items-center max-sm:grid max-sm:grid-cols-1">
       <h2 class="text-3xl text-orange-800 font-bold mb-8">Всі товари</h2>
       <div class="justify-center">
-        <div class="relative max-sm:grid max-sm:pb-4 max-sm:px-4 max-sm:mr-6">
+        <div class="relative max-sm:grid max-sm:pb-4 w-full max-sm:mr-6">
           <img class="absolute left-6 top-3" src="/public/search.svg" alt="" />
           <input
             v-model="filter.searchItems"
