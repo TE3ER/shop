@@ -13,15 +13,19 @@
       <div
         class="basis-2/5 p-2.5 mb-5 text-left w-full max-w-2/4 text-xl max-sm:text-left max-sm:basis-full"
       >
-        <h2 class="my-2.5 mx-0">Графік роботи</h2>
-        <p class="leading-9"><i class="far fa-clock"></i>Понеділок - П'ятниця : 10.00-18.00</p>
-        <p class="leading-9"><i class="far fa-clock"></i>Субота - Неділя : Вихідний</p>
+        <h2 class="my-2.5 mx-0">Графік роботи:</h2>
+        <p class="leading-9 max-sm:text-sm">
+          <i class="far fa-clock max-sm:text-sm"></i>Понеділок - П'ятниця : 10.00-18.00
+        </p>
+        <p class="leading-9 max-sm:text-sm">
+          <i class="far fa-clock max-sm:text-sm"></i>Субота - Неділя : Вихідний
+        </p>
       </div>
       <div
         class="basis-2/5 p-2.5 mb-5 max-lg:mr-16 text-right w-full max-w-2/4 text-xl max-sm:text-left"
       >
         <h2 class="my-2.5 mx-0">Контакти</h2>
-        <div class="flex flex-col mb-8">
+        <div class="flex flex-col mb-8 max-sm:text-sm">
           <a href="mailto:info@example.com" class="inline-block"
             ><i class="fas fa-envelope-open"></i> info@example.com</a
           >
