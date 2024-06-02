@@ -56,7 +56,7 @@
               class="m-0 box-border text-xs ont-sans text-amber-900 absolute bottom-0 w-full p-9"
             >
               <span
-                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
+                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 font-medium tracking-widest text-sm"
                 >Telegram<i class="bi bi-arrow-up-right"></i>
               </span>
             </span>
@@ -77,7 +77,7 @@
               class="m-0 box-border text-xs ont-sans text-amber-900 absolute bottom-0 w-full p-9"
             >
               <span
-                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
+                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 font-medium tracking-widest text-sm"
                 >Instagram<i class="bi bi-arrow-up-right"></i>
               </span>
             </span>
@@ -97,7 +97,7 @@
               class="m-0 box-border text-xs ont-sans text-amber-900 absolute bottom-0 w-full p-9"
             >
               <span
-                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 px-20 font-medium tracking-widest text-sm"
+                class="m-0 box-border ont-sans ease-in bg-gray-500-0.5 backdrop-blur-md rounded-xl w-full items-center h-14 flex justify-center text-white py-0 font-medium tracking-widest text-sm"
                 >Viber<i class="bi bi-arrow-up-right"></i>
               </span>
             </span>
