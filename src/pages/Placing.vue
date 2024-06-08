@@ -56,16 +56,7 @@ const adjustTextareaHeight = (event) => {
   textarea.style.height = `${textarea.scrollHeight}px`
 }
 
-watch(comment, () => {
-  // Adjust textarea height initially if there's already text in it
-  const textarea = document.querySelector('textarea')
-  if (textarea) {
-    textarea.style.height = 'auto'
-    textarea.style.height = `${textarea.scrollHeight}px`
-  }
-})
-
-// функція викликає validateForm для перевірки валідності форми перед відправленням замовленняr
+// функція викликає validateForm для перевірки валідності форми перед відправленням замовлення
 const submitOrder = async () => {
   validateForm()
   if (!formValid.value) {
@@ -91,10 +82,10 @@ const submitOrder = async () => {
     console.log('Order submitted:', response.data)
     clearCart()
     clearForm()
-    // You can also handle success, e.g., show a success message, reset the form, etc.
+    showSuccessMessage.value = true // Показуємо повідомлення про успішне оформлення замовлення
   } catch (error) {
     console.error('Error submitting order:', error)
-    // Handle error, e.g., show an error message
+    // Обробка помилки
   }
 }
 
@@ -111,6 +102,15 @@ const clearForm = () => {
   delivery.value = ''
   pay.value = ''
   formValid.value = false
+}
+
+// Змінна для умовного відображення повідомлення
+const showSuccessMessage = ref(false)
+
+// Функція для закриття повідомлення про успішне оформлення замовлення
+const closeSuccessMessage = () => {
+  showSuccessMessage.value = false
+  document.body.style.overflow = 'auto'
 }
 </script>
 
@@ -189,5 +189,35 @@ const clearForm = () => {
     >
       Оформити замовлення
     </button>
+  </div>
+  <div
+    v-if="showSuccessMessage"
+    class="fixed inset-0 bg-black z-20 opacity-70"
+    @click="closeSuccessMessage"
+  ></div>
+
+  <div
+    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-white text-black p-8 rounded-md text-center"
+    v-if="showSuccessMessage"
+  >
+    <div>
+      <router-link to="/" @click="scrollToTop">
+        <img
+          src="/public/LOGO-removebg-preview.png"
+          alt="Фото"
+          class="w-36 h-36 m-auto object-cover"
+        />
+      </router-link>
+      <p class="max-sm:text-xs p-4">Замовлення успішно оформлено</p>
+      <p class="max-sm:text-xs p-4">Дякуємо за замовлення</p>
+      <p class="max-sm:text-xs p-4">Ми вам перетелефонуємо в найближчу годину</p>
+
+      <p class="max-sm:text-sm p-4">
+        Перейти на
+        <router-link to="/" @click="scrollToTop"
+          ><span class="font-bold text-orange-800">головну</span></router-link
+        >
+      </p>
+    </div>
   </div>
 </template>

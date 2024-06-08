@@ -65,6 +65,11 @@ export default {
               <h3 class="text-lg font-bold mb-2">Про нас</h3>
             </router-link>
           </div>
+          <div class="lg:mt-0 max-sm:mt-10">
+            <router-link to="/pay" @click="scrollToTop">
+              <h3 class="text-lg font-bold mb-2">Доставка та оплата</h3>
+            </router-link>
+          </div>
         </div>
         <div class="flex flex-col text-center lg:text-left lg:mb-4 items-center lg:items-start">
           <h3 class="text-2xl font-bold mb-2">Графік роботи</h3>
