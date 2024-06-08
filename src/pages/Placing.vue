@@ -112,6 +112,15 @@ const closeSuccessMessage = () => {
   showSuccessMessage.value = false
   document.body.style.overflow = 'auto'
 }
+const scrollToTop = () => {
+  if (typeof window !== 'undefined') {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+}
+const submitOrderAndScrollToTop = () => {
+  submitOrder()
+  scrollToTop()
+}
 </script>
 
 <template>
@@ -184,7 +193,7 @@ const closeSuccessMessage = () => {
 
     <button
       :disabled="!formValid || !totalPrice"
-      @click="submitOrder"
+      @click="submitOrderAndScrollToTop"
       class="mt-4 transition bg-lime-500 w-full rounded-xl py-3 text-white disabled:bg-slate-300 hover:bg-lime-600 active:bg-lime-700 cursor:pointer"
     >
       Оформити замовлення
