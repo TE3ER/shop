@@ -77,7 +77,7 @@ const itemCount = computed(() => cart.value.length)
   <Basket v-if="basketOpen" :total-price="totalPrice" />
   <Category v-if="categoryOpen" />
 
-  <div class="bg-white w-4/5 m-auto shadow-xl mt-14 border">
+  <div class="bg-white w-4/5 m-auto shadow-xl mt-14 border rounded-3xl">
     <Header
       :total-price="totalPrice"
       :item-count="itemCount"

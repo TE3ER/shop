@@ -1,12 +1,12 @@
 <script setup>
-import { ref, inject, watch } from 'vue'
+import { ref, inject } from 'vue'
 import CardItemList from '../components/CardItemList.vue'
 import axios from 'axios'
 
-// Inject total price from parent component with a default value of 0
+// загальна ціна з батьківського компонента зі значенням за замовчуванням 0
 const totalPrice = inject('totalPrice', ref(0))
 
-// Define refs for form fields
+// Визначення посилання для полів форми
 const name = ref('')
 const email = ref('')
 const phone = ref('')
@@ -14,15 +14,15 @@ const comment = ref('')
 const delivery = ref('')
 const pay = ref('')
 
-// Define refs for form validation state
+// Визначення посилання для стану перевірки форми
 const nameError = ref('')
 const emailError = ref('')
 const phoneError = ref('')
 const deliveryError = ref('')
 const payError = ref('')
-const formValid = ref(false) // Initialize form validity
+const formValid = ref(false) // Ініціалізація дійсності форми
 
-// Regular expressions for validation
+// Регулярні вирази для перевірки
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const phoneRegex = /^\+?\d{10,15}$/
 
@@ -56,6 +56,25 @@ const adjustTextareaHeight = (event) => {
   textarea.style.height = `${textarea.scrollHeight}px`
 }
 
+// Функція для отримання останнього номера замовлення з локального сховища
+const getLastOrderNumber = () => {
+  const lastOrderNumber = localStorage.getItem('lastOrderNumber')
+  return lastOrderNumber ? parseInt(lastOrderNumber) : 0
+}
+
+// Функція для збереження останнього номера замовлення в локальному сховищі
+const saveLastOrderNumber = (number) => {
+  localStorage.setItem('lastOrderNumber', number)
+}
+
+// Генерація номера замовлення
+const generateOrderNumber = () => {
+  let lastOrderNumber = getLastOrderNumber()
+  lastOrderNumber += 1
+  saveLastOrderNumber(lastOrderNumber)
+  return 'N' + String(lastOrderNumber).padStart(5, '0')
+}
+
 // функція викликає validateForm для перевірки валідності форми перед відправленням замовлення
 const submitOrder = async () => {
   validateForm()
@@ -63,15 +82,18 @@ const submitOrder = async () => {
     return
   }
 
+  const orderNumber = generateOrderNumber() // Генеруємо номер замовлення
+
   const orderData = {
+    orderNumber: orderNumber,
     name: name.value,
     email: email.value,
     phone: phone.value,
     comment: comment.value,
     totalPrice: totalPrice.value,
-    delivery: delivery.value, // Example delivery method
-    pay: pay.value, // Example payment method
-    items: cart.value // Example cart data, should be replaced with actual cart data
+    delivery: delivery.value,
+    pay: pay.value,
+    items: cart.value
   }
 
   try {
@@ -83,6 +105,7 @@ const submitOrder = async () => {
     clearCart()
     clearForm()
     showSuccessMessage.value = true // Показуємо повідомлення про успішне оформлення замовлення
+    successOrderNumber.value = orderNumber // Зберігаємо номер замовлення для відображення у повідомленні
   } catch (error) {
     console.error('Error submitting order:', error)
     // Обробка помилки
@@ -106,6 +129,7 @@ const clearForm = () => {
 
 // Змінна для умовного відображення повідомлення
 const showSuccessMessage = ref(false)
+const successOrderNumber = ref('')
 
 // Функція для закриття повідомлення про успішне оформлення замовлення
 const closeSuccessMessage = () => {
@@ -157,7 +181,7 @@ const submitOrderAndScrollToTop = () => {
     <div class="w-full">
       <textarea
         v-model="comment"
-        class="border rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6 w-full resize-none"
+        class="border overflow-hidden rounded-md py-2 pl-11 pr-4 outline-none focus:border-gray-400 sm:text-sm sm:leading-6 w-full resize-none"
         placeholder="Коментарі"
         @input="adjustTextareaHeight"
       ></textarea>
@@ -196,9 +220,10 @@ const submitOrderAndScrollToTop = () => {
       @click="submitOrderAndScrollToTop"
       class="mt-4 transition bg-lime-500 w-full rounded-xl py-3 text-white disabled:bg-slate-300 hover:bg-lime-600 active:bg-lime-700 cursor:pointer"
     >
-      Оформити замовлення
+      Замовити
     </button>
   </div>
+
   <div
     v-if="showSuccessMessage"
     class="fixed inset-0 bg-black z-20 opacity-70"
@@ -218,6 +243,10 @@ const submitOrderAndScrollToTop = () => {
         />
       </router-link>
       <p class="max-sm:text-xs p-4">Замовлення успішно оформлено</p>
+      <p class="max-sm:text-xs p-4">
+        Ваш номер замовлення:
+        <span class="font-bold text-orange-800">{{ successOrderNumber }}</span>
+      </p>
       <p class="max-sm:text-xs p-4">Дякуємо за замовлення</p>
       <p class="max-sm:text-xs p-4">Ми вам перетелефонуємо в найближчу годину</p>
 
@@ -227,6 +256,14 @@ const submitOrderAndScrollToTop = () => {
           ><span class="font-bold text-orange-800">головну</span></router-link
         >
       </p>
+    </div>
+    <div>
+      <button
+        @click="closeSuccessMessage"
+        class="mt-4 transition bg-lime-500 w-full rounded-xl py-3 text-white hover:bg-lime-600 active:bg-lime-700 cursor:pointer"
+      >
+        Закрити
+      </button>
     </div>
   </div>
 </template>

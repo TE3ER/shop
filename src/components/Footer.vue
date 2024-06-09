@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <footer class="bg-gray-800 text-white py-8">
+  <footer class="bg-gray-800 text-white py-8 rounded-b-3xl">
     <div
       class="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-center"
     >

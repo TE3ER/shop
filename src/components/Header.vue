@@ -15,7 +15,7 @@ const scrollToTop = () => {
 
 <template v-auto-animate>
   <header
-    class="sticky top-0 z-10 bg-white flex justify-center items-center border-b border-slate-200 px-22 py-2 max-sm:px-4 max-sm:py-1 border rounded-b-3xl"
+    class="sticky top-0 z-10 bg-white flex justify-center items-center border-b border-slate-200 px-22 py-2 max-sm:px-4 max-sm:py-1 border rounded-3xl rounded-b-3xl"
     v-auto-animate
   >
     <div @click="() => emit('OpenCategory')">
