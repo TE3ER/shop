@@ -58,15 +58,13 @@ const adjustTextareaHeight = (event) => {
 
 // Функція для отримання останнього номера замовлення з локального сховища
 const getLastOrderNumber = () => {
-  const lastOrderNumber = localStorage.getItem('lastOrderNumber')
+  const lastOrderNumber = sessionStorage.getItem('lastOrderNumber')
   return lastOrderNumber ? parseInt(lastOrderNumber) : 0
 }
-
 // Функція для збереження останнього номера замовлення в локальному сховищі
 const saveLastOrderNumber = (number) => {
-  localStorage.setItem('lastOrderNumber', number)
+  sessionStorage.setItem('lastOrderNumber', number)
 }
-
 // Генерація номера замовлення
 const generateOrderNumber = () => {
   let lastOrderNumber = getLastOrderNumber()
