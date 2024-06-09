@@ -1,5 +1,5 @@
 <script setup>
-import { ref, inject } from 'vue'
+import { ref, inject, watch } from 'vue'
 import CardItemList from '../components/CardItemList.vue'
 import axios from 'axios'
 
@@ -72,7 +72,8 @@ const generateOrderNumber = () => {
   let lastOrderNumber = getLastOrderNumber()
   lastOrderNumber += 1
   saveLastOrderNumber(lastOrderNumber)
-  return 'N' + String(lastOrderNumber).padStart(5, '0')
+  const paddedNumber = String(lastOrderNumber).padStart(5, '0')
+  return 'N' + paddedNumber
 }
 
 // функція викликає validateForm для перевірки валідності форми перед відправленням замовлення
