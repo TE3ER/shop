@@ -209,9 +209,9 @@ const submitOrderAndScrollToTop = () => {
 
   <div class="flex flex-col gap-4 mt-7">
     <div class="flex gap-2">
-      <span>До оплати:</span>
-      <div class="flex-1 border-b border-dashed"></div>
-      <b>{{ totalPrice }} ₴</b>
+      <span class="font-bold text-orange-800">До оплати:</span>
+      <div class="flex-1 text-orange-800 border-b border-dashed"></div>
+      <b class="font-bold text-orange-800">{{ totalPrice }} ₴</b>
     </div>
 
     <button
